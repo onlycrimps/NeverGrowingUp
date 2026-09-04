@@ -8,48 +8,37 @@
 
   <title>Never Growing Up</title>
 
-  <meta
-    name="description"
-    content="Never Growing Up — a personal blog about adventures, machines, money, curiosity, and holding on."
-  >
-
   <style>
 
     /* =====================================================
        NEVER GROWING UP
-       Simple / Retro Internet / Personal Homepage
+       Minimal MySpace / Personal Internet Vibe
        ===================================================== */
 
     :root {
       --black: #111111;
-      --white: #f8f8f5;
-      --gray: #dcdcd8;
+      --white: #ffffff;
+      --offwhite: #f4f4f2;
+      --gray: #e5e5e3;
       --gray-dark: #777777;
 
-      --blue: #2f4f72;
-      --red: #a94b3d;
-      --yellow: #d1a928;
+      --blue: #365d87;
+      --pink: #b56b7c;
     }
 
 
     /* -------------------------
-       RESET
+       BASE
        ------------------------- */
 
     * {
       box-sizing: border-box;
     }
 
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
     body {
       margin: 0;
 
-      background: var(--white);
+      background: var(--offwhite);
 
       color: var(--black);
 
@@ -58,32 +47,26 @@
         Helvetica,
         sans-serif;
 
-      font-size: 14px;
+      font-size: 13px;
 
       line-height: 1.6;
     }
 
 
     a {
-      color: var(--black);
+      color: var(--blue);
 
-      text-decoration: underline;
-
-      text-decoration-thickness: 1px;
-
-      text-underline-offset: 2px;
+      text-decoration: none;
     }
 
 
     a:hover {
-      color: var(--red);
+      text-decoration: underline;
     }
 
 
     img {
       max-width: 100%;
-
-      display: block;
     }
 
 
@@ -92,28 +75,26 @@
        ------------------------- */
 
     .page {
-      width: min(1000px, calc(100% - 32px));
+      width: 920px;
 
-      margin: 0 auto;
+      max-width: calc(100% - 30px);
 
-      padding-bottom: 50px;
+      margin: 20px auto 50px;
     }
 
 
     /* -------------------------
-       TOP UTILITY BAR
+       TOP LINE
        ------------------------- */
 
-    .utility {
+    .top {
       display: flex;
 
       justify-content: space-between;
 
-      align-items: center;
-
-      padding: 9px 0;
-
       border-bottom: 1px solid var(--black);
+
+      padding-bottom: 7px;
 
       font-size: 10px;
 
@@ -123,86 +104,99 @@
     }
 
 
-    .utility-right {
+    .top-right {
       color: var(--gray-dark);
     }
 
 
     /* -------------------------
-       HEADER
+       PROFILE HEADER
        ------------------------- */
 
-    header {
-      padding: 75px 0 65px;
+    .profile-header {
+      background: var(--white);
 
-      border-bottom: 4px solid var(--black);
+      border: 1px solid var(--black);
+
+      padding: 25px;
+
+      margin-top: 12px;
+
+      display: grid;
+
+      grid-template-columns: 150px 1fr;
+
+      gap: 25px;
     }
 
 
-    .small-title {
+    /* -------------------------
+       PROFILE PHOTO
+       ------------------------- */
+
+    .profile-photo {
+      width: 150px;
+
+      height: 150px;
+
+      object-fit: cover;
+
+      background: var(--gray);
+
+      border: 1px solid var(--black);
+    }
+
+
+    /* -------------------------
+       PROFILE INFO
+       ------------------------- */
+
+    .profile-info h1 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-weight: normal;
+
+      font-size: 46px;
+
+      line-height: 1;
+
+      margin: 0 0 8px;
+
+      letter-spacing: -2px;
+    }
+
+
+    .profile-info h1 span {
+      color: var(--pink);
+    }
+
+
+    .profile-subtitle {
+      font-size: 12px;
+
+      color: var(--gray-dark);
+
+      margin-bottom: 18px;
+    }
+
+
+    .status {
+      display: inline-block;
+
+      background: var(--black);
+
+      color: white;
+
+      padding: 4px 8px;
+
       font-size: 10px;
 
       text-transform: uppercase;
 
-      letter-spacing: 3px;
-
-      margin-bottom: 20px;
-
-      color: var(--gray-dark);
-    }
-
-
-    h1 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: clamp(60px, 11vw, 120px);
-
-      font-weight: normal;
-
-      letter-spacing: -7px;
-
-      line-height: 0.8;
-
-      margin: 0;
-
-      color: var(--black);
-    }
-
-
-    h1 span {
-      display: block;
-
-      color: var(--white);
-
-      -webkit-text-stroke: 2px var(--black);
-
-      margin-left: 55px;
-
-      margin-top: 12px;
-    }
-
-
-    .tagline {
-      max-width: 620px;
-
-      margin: 35px 0 0;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 20px;
-
-      line-height: 1.45;
-    }
-
-
-    .tagline em {
-      color: var(--red);
+      letter-spacing: 0.7px;
     }
 
 
@@ -211,15 +205,22 @@
        ------------------------- */
 
     nav {
+      margin-top: 10px;
+
+      background: var(--black);
+
+      padding: 8px 12px;
+
       display: flex;
 
-      gap: 22px;
+      gap: 20px;
+    }
 
-      padding: 13px 0;
 
-      border-bottom: 1px solid var(--black);
+    nav a {
+      color: white;
 
-      font-size: 11px;
+      font-size: 10px;
 
       text-transform: uppercase;
 
@@ -227,51 +228,69 @@
     }
 
 
-    nav a {
-      text-decoration: none;
-    }
+    /* -------------------------
+       MAIN LAYOUT
+       ------------------------- */
 
+    .columns {
+      display: grid;
 
-    nav a:hover {
-      text-decoration: underline;
+      grid-template-columns: 250px 1fr;
+
+      gap: 15px;
+
+      margin-top: 15px;
+
+      align-items: start;
     }
 
 
     /* -------------------------
-       INTRO
+       BOXES
        ------------------------- */
 
-    .intro {
-      padding: 65px 0;
+    .box {
+      background: var(--white);
 
-      display: grid;
+      border: 1px solid var(--black);
 
-      grid-template-columns: 1fr 2fr;
-
-      gap: 60px;
-
-      border-bottom: 1px solid var(--black);
+      margin-bottom: 15px;
     }
 
 
-    .intro-label {
-      font-size: 11px;
+    .box-title {
+      background: var(--gray);
+
+      border-bottom: 1px solid var(--black);
+
+      padding: 6px 9px;
+
+      font-size: 10px;
+
+      font-weight: bold;
 
       text-transform: uppercase;
 
-      letter-spacing: 2px;
-
-      color: var(--gray-dark);
+      letter-spacing: 1px;
     }
 
 
-    .intro-text {
+    .box-content {
+      padding: 13px;
+    }
+
+
+    /* -------------------------
+       LEFT SIDEBAR
+       ------------------------- */
+
+    .about-me {
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-size: 25px;
+      font-size: 16px;
 
       line-height: 1.4;
 
@@ -279,114 +298,92 @@
     }
 
 
-    /* -------------------------
-       FEATURED IMAGE
-       ------------------------- */
+    .tiny {
+      font-size: 10px;
 
-    .feature {
-      padding: 50px 0;
-
-      border-bottom: 1px solid var(--black);
+      color: var(--gray-dark);
     }
 
 
-    .feature img {
-      width: 100%;
+    /* -------------------------
+       DETAILS
+       ------------------------- */
 
-      height: 430px;
+    .details {
+      list-style: none;
+
+      margin: 0;
+
+      padding: 0;
+    }
+
+
+    .details li {
+      padding: 5px 0;
+
+      border-bottom: 1px dotted #bbb;
+
+      font-size: 11px;
+    }
+
+
+    .details li:last-child {
+      border-bottom: 0;
+    }
+
+
+    .details strong {
+      color: var(--black);
+    }
+
+
+    /* -------------------------
+       CURRENTLY LISTENING
+       ------------------------- */
+
+    .music {
+      display: grid;
+
+      grid-template-columns: 55px 1fr;
+
+      gap: 10px;
+
+      align-items: center;
+    }
+
+
+    .album {
+      width: 55px;
+
+      height: 55px;
 
       object-fit: cover;
 
       background: var(--gray);
 
-      filter: grayscale(20%);
+      border: 1px solid var(--black);
     }
 
 
-    .caption {
-      display: flex;
+    .music-title {
+      font-weight: bold;
 
-      justify-content: space-between;
+      font-size: 11px;
+    }
 
-      gap: 20px;
 
-      margin-top: 10px;
+    .music-artist {
+      color: var(--gray-dark);
 
       font-size: 10px;
-
-      color: var(--gray-dark);
     }
 
 
     /* -------------------------
-       SECTION HEADER
+       MAIN CONTENT
        ------------------------- */
 
-    .section-header {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: baseline;
-
-      padding: 45px 0 15px;
-
-      border-bottom: 2px solid var(--black);
-    }
-
-
-    .section-header h2 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 30px;
-
-      font-weight: normal;
-
-      margin: 0;
-    }
-
-
-    .section-header span {
-      font-size: 10px;
-
-      text-transform: uppercase;
-
-      color: var(--gray-dark);
-    }
-
-
-    /* -------------------------
-       POSTS
-       ------------------------- */
-
-    .post {
-      display: grid;
-
-      grid-template-columns: 130px 1fr;
-
-      gap: 30px;
-
-      padding: 27px 0;
-
-      border-bottom: 1px dotted var(--gray-dark);
-    }
-
-
-    .post-date {
-      font-size: 10px;
-
-      text-transform: uppercase;
-
-      color: var(--gray-dark);
-
-      padding-top: 6px;
-    }
-
-
-    .post h3 {
+    .content-intro {
       font-family:
         Georgia,
         "Times New Roman",
@@ -394,208 +391,183 @@
 
       font-size: 24px;
 
+      line-height: 1.35;
+
+      margin: 0;
+    }
+
+
+    .content-intro em {
+      color: var(--pink);
+
+      font-style: normal;
+    }
+
+
+    /* -------------------------
+       FEATURE PHOTO
+       ------------------------- */
+
+    .feature-photo {
+      width: 100%;
+
+      height: 350px;
+
+      object-fit: cover;
+
+      background: var(--gray);
+
+      border: 1px solid var(--black);
+
+      margin-top: 20px;
+    }
+
+
+    .caption {
+      font-size: 9px;
+
+      color: var(--gray-dark);
+
+      margin-top: 5px;
+    }
+
+
+    /* -------------------------
+       BLOG
+       ------------------------- */
+
+    .post {
+      padding: 18px 0;
+
+      border-bottom: 1px dotted #999;
+    }
+
+
+    .post:first-child {
+      padding-top: 0;
+    }
+
+
+    .post:last-child {
+      border-bottom: 0;
+
+      padding-bottom: 0;
+    }
+
+
+    .post-date {
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      color: var(--gray-dark);
+    }
+
+
+    .post h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 22px;
+
       font-weight: normal;
 
       line-height: 1.2;
 
-      margin: 0 0 7px;
+      margin: 3px 0 5px;
     }
 
 
     .post p {
+      color: #444;
+
       margin: 0;
 
-      color: #444444;
-
-      max-width: 650px;
+      font-size: 12px;
     }
 
 
-    .post a {
+    .read {
       display: inline-block;
 
-      margin-top: 10px;
+      margin-top: 7px;
 
-      font-size: 11px;
+      font-size: 10px;
+
+      text-transform: uppercase;
     }
 
 
     /* -------------------------
-       LITTLE "NOW" AREA
+       FRIENDS / INTERESTS
        ------------------------- */
 
-    .now {
-      margin-top: 50px;
+    .interests {
+      display: flex;
 
-      padding: 25px;
+      flex-wrap: wrap;
 
-      background: var(--black);
-
-      color: var(--white);
+      gap: 5px;
     }
 
 
-    .now-title {
-      font-size: 10px;
+    .interest {
+      border: 1px solid #aaa;
+
+      padding: 3px 7px;
+
+      background: var(--offwhite);
+
+      font-size: 9px;
 
       text-transform: uppercase;
-
-      letter-spacing: 2px;
-
-      color: #999999;
-
-      margin-bottom: 15px;
     }
 
 
-    .now-content {
-      display: grid;
+    /* -------------------------
+       LITTLE QUOTE
+       ------------------------- */
 
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 25px;
-    }
-
-
-    .now-item {
-      border-left: 1px solid #555555;
-
-      padding-left: 15px;
-    }
-
-
-    .now-item strong {
-      display: block;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 17px;
-
-      font-weight: normal;
+    .quote {
+      background: var(--black);
 
       color: white;
 
-      margin-bottom: 5px;
-    }
+      padding: 20px;
 
+      margin-top: 15px;
 
-    .now-item span {
-      font-size: 11px;
-
-      color: #aaaaaa;
-    }
-
-
-    /* -------------------------
-       TOPICS
-       ------------------------- */
-
-    .topics {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 1px;
-
-      background: var(--black);
-
-      margin-top: 50px;
-
-      border: 1px solid var(--black);
-    }
-
-
-    .topic {
-      background: var(--white);
-
-      padding: 25px 18px;
-
-      min-height: 150px;
-    }
-
-
-    .topic-number {
-      font-size: 10px;
-
-      color: var(--gray-dark);
-
-      margin-bottom: 25px;
-    }
-
-
-    .topic h3 {
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-size: 20px;
+      font-size: 18px;
 
-      font-weight: normal;
+      line-height: 1.35;
 
-      margin: 0 0 7px;
+      text-align: center;
     }
 
 
-    .topic p {
-      font-size: 11px;
+    .quote small {
+      display: block;
 
-      color: #555555;
+      margin-top: 8px;
 
-      margin: 0;
-    }
+      font-family: Arial, sans-serif;
 
+      font-size: 9px;
 
-    /* -------------------------
-       ABOUT
-       ------------------------- */
-
-    .about {
-      padding: 80px 0;
-
-      max-width: 750px;
-
-      border-bottom: 1px solid var(--black);
-    }
-
-
-    .about-label {
-      font-size: 10px;
+      color: #aaa;
 
       text-transform: uppercase;
 
-      letter-spacing: 2px;
-
-      color: var(--gray-dark);
-
-      margin-bottom: 20px;
-    }
-
-
-    .about h2 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-weight: normal;
-
-      font-size: 38px;
-
-      line-height: 1.1;
-
-      margin: 0 0 25px;
-    }
-
-
-    .about p {
-      color: #444444;
-
-      font-size: 15px;
+      letter-spacing: 1px;
     }
 
 
@@ -604,22 +576,19 @@
        ------------------------- */
 
     footer {
-      padding: 30px 0;
+      border-top: 1px solid var(--black);
 
-      font-size: 10px;
+      margin-top: 30px;
 
-      color: var(--gray-dark);
+      padding-top: 10px;
 
       display: flex;
 
       justify-content: space-between;
 
-      gap: 20px;
-    }
+      font-size: 9px;
 
-
-    footer strong {
-      color: var(--black);
+      color: var(--gray-dark);
     }
 
 
@@ -630,86 +599,45 @@
     @media (max-width: 700px) {
 
       .page {
-        width: calc(100% - 24px);
+        width: calc(100% - 20px);
+
+        margin-top: 10px;
       }
 
 
-      .utility-right {
-        display: none;
+      .profile-header {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
       }
 
 
-      header {
-        padding: 55px 0 50px;
+      .profile-photo {
+        width: 120px;
+
+        height: 120px;
       }
 
 
-      h1 {
-        font-size: 64px;
-
-        letter-spacing: -4px;
-      }
-
-
-      h1 span {
-        margin-left: 25px;
-
-        -webkit-text-stroke: 1.5px var(--black);
-      }
-
-
-      .tagline {
-        font-size: 18px;
+      .profile-info h1 {
+        font-size: 38px;
       }
 
 
       nav {
-        gap: 15px;
+        gap: 13px;
 
         flex-wrap: wrap;
       }
 
 
-      .intro {
+      .columns {
         grid-template-columns: 1fr;
-
-        gap: 15px;
-
-        padding: 45px 0;
       }
 
 
-      .intro-text {
-        font-size: 21px;
-      }
-
-
-      .feature img {
-        height: 300px;
-      }
-
-
-      .post {
-        grid-template-columns: 1fr;
-
-        gap: 5px;
-      }
-
-
-      .now-content {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-      }
-
-
-      .topics {
-        grid-template-columns: 1fr 1fr;
-      }
-
-
-      .about h2 {
-        font-size: 30px;
+      .feature-photo {
+        height: 250px;
       }
 
 
@@ -722,6 +650,7 @@
     }
 
   </style>
+
 </head>
 
 
@@ -731,444 +660,450 @@
 <div class="page">
 
 
-  <!-- ===============================================
-       UTILITY
-       =============================================== -->
+  <!-- =================================================
+       TOP
+       ================================================= -->
 
-  <div class="utility">
+  <div class="top">
 
     <div>
-      NEVER GROWING UP
+      never growing up
     </div>
 
-    <div class="utility-right">
-      a personal website on the internet
+    <div class="top-right">
+      welcome to my page
     </div>
 
   </div>
 
 
-  <!-- ===============================================
-       HEADER
-       =============================================== -->
+  <!-- =================================================
+       PROFILE HEADER
+       ================================================= -->
 
-  <header>
+  <header class="profile-header">
 
-    <div class="small-title">
-      Welcome, stranger.
+
+    <!--
+      REPLACE THIS IMAGE WITH:
+
+      assets/profile.jpg
+    -->
+
+    <img
+      src="assets/profile.jpg"
+      alt="Profile photo"
+      class="profile-photo"
+    >
+
+
+    <div class="profile-info">
+
+      <h1>
+        Never <span>Growing Up.</span>
+      </h1>
+
+      <div class="profile-subtitle">
+
+        adventures · machines · money · life
+
+      </div>
+
+      <div class="status">
+
+        ● currently figuring it out
+
+      </div>
+
     </div>
 
-    <h1>
-      Never
-      <span>Growing Up.</span>
-    </h1>
-
-    <p class="tagline">
-      A personal collection of <em>adventures, observations,
-      machines, money, mistakes,</em> and other things I find
-      interesting along the way.
-    </p>
 
   </header>
 
 
-  <!-- ===============================================
+  <!-- =================================================
        NAVIGATION
 
-       ADD YOUR LINKS HERE
-       =============================================== -->
+       ADD / REMOVE LINKS AS YOU BUILD YOUR SITE
+       ================================================= -->
 
   <nav>
 
     <a href="#">home</a>
 
-    <a href="#">writing</a>
+    <a href="#">blog</a>
 
     <a href="#">adventures</a>
-
-    <a href="#">projects</a>
 
     <a href="#">about</a>
 
   </nav>
 
 
-  <!-- ===============================================
-       INTRO
-       =============================================== -->
+  <!-- =================================================
+       COLUMNS
+       ================================================= -->
 
-  <section class="intro">
-
-    <div class="intro-label">
-      Why this exists
-    </div>
-
-    <p class="intro-text">
-
-      I don't really want to grow up.
-
-      <br><br>
-
-      I just want to keep learning, keep wandering,
-      keep making things, and keep finding reasons
-      to be excited about being here.
-
-    </p>
-
-  </section>
+  <div class="columns">
 
 
-  <!-- ===============================================
-       FEATURED IMAGE
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
 
-       Replace with:
-       assets/hero.jpg
-       =============================================== -->
-
-  <section class="feature">
-
-    <img
-      src="assets/hero.jpg"
-      alt="A photograph from an adventure"
-    >
-
-    <div class="caption">
-
-      <span>
-        Somewhere worth going.
-      </span>
-
-      <span>
-        Photo / 2026
-      </span>
-
-    </div>
-
-  </section>
+    <aside>
 
 
-  <!-- ===============================================
-       WRITING
-       =============================================== -->
+      <!-- ABOUT -->
 
-  <section>
+      <div class="box">
 
-    <div class="section-header">
+        <div class="box-title">
+          about me
+        </div>
 
-      <h2>
-        Recent writing
-      </h2>
+        <div class="box-content">
 
-      <span>
-        thoughts / stories / experiments
-      </span>
+          <p class="about-me">
 
-    </div>
+            I don't want to grow up.
 
+            <br><br>
 
-    <!-- POST 01 -->
+            I just want to keep being curious.
 
-    <article class="post">
+          </p>
 
-      <div class="post-date">
-        09.2026
-      </div>
+          <p class="tiny">
 
-      <div>
+            Somewhere on the internet ·
+            probably distracted by something
 
-        <h3>
-          The Case for Staying a Little Bit Lost
-        </h3>
+          </p>
 
-        <p>
-          Maybe having everything figured out isn't
-          actually the goal.
-        </p>
-
-        <a href="#">
-          read →
-        </a>
+        </div>
 
       </div>
 
-    </article>
 
+      <!-- DETAILS -->
 
-    <!-- POST 02 -->
+      <div class="box">
 
-    <article class="post">
+        <div class="box-title">
+          details
+        </div>
 
-      <div class="post-date">
-        08.2026
-      </div>
+        <div class="box-content">
 
-      <div>
+          <ul class="details">
 
-        <h3>
-          What Are We Saving All This Money For?
-        </h3>
+            <li>
+              <strong>Currently:</strong>
+              Somewhere interesting
+            </li>
 
-        <p>
-          Financial independence sounds great.
-          But independence to do what?
-        </p>
+            <li>
+              <strong>Occupation:</strong>
+              Figuring it out
+            </li>
 
-        <a href="#">
-          read →
-        </a>
+            <li>
+              <strong>Mood:</strong>
+              Curious
+            </li>
 
-      </div>
+            <li>
+              <strong>Goal:</strong>
+              More life, less stuff
+            </li>
 
-    </article>
+          </ul>
 
-
-    <!-- POST 03 -->
-
-    <article class="post">
-
-      <div class="post-date">
-        08.2026
-      </div>
-
-      <div>
-
-        <h3>
-          Things Worth Fixing
-        </h3>
-
-        <p>
-          Machines, relationships, old habits,
-          and the strange instinct to repair
-          things instead of replacing them.
-        </p>
-
-        <a href="#">
-          read →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- POST 04 -->
-
-    <article class="post">
-
-      <div class="post-date">
-        07.2026
-      </div>
-
-      <div>
-
-        <h3>
-          Take the Long Way Home
-        </h3>
-
-        <p>
-          Some roads are worth taking simply
-          because they weren't the fastest.
-        </p>
-
-        <a href="#">
-          read →
-        </a>
-
-      </div>
-
-    </article>
-
-
-  </section>
-
-
-  <!-- ===============================================
-       CURRENTLY
-       =============================================== -->
-
-  <section class="now">
-
-    <div class="now-title">
-      Currently
-    </div>
-
-
-    <div class="now-content">
-
-
-      <div class="now-item">
-
-        <strong>
-          Listening
-        </strong>
-
-        <span>
-          Something loud / something good
-        </span>
+        </div>
 
       </div>
 
 
-      <div class="now-item">
+      <!-- MUSIC -->
 
-        <strong>
-          Working On
-        </strong>
+      <div class="box">
 
-        <span>
-          A project that probably needs less planning
-        </span>
+        <div class="box-title">
+          currently listening
+        </div>
+
+        <div class="box-content">
+
+          <div class="music">
+
+            <!--
+              REPLACE WITH:
+
+              assets/album.jpg
+            -->
+
+            <img
+              src="assets/album.jpg"
+              alt="Album artwork"
+              class="album"
+            >
+
+            <div>
+
+              <div class="music-title">
+                Song Title
+              </div>
+
+              <div class="music-artist">
+                Artist Name
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
 
-      <div class="now-item">
+      <!-- INTERESTS -->
 
-        <strong>
-          Thinking About
-        </strong>
+      <div class="box">
 
-        <span>
-          What a good life actually looks like
-        </span>
+        <div class="box-title">
+          interests
+        </div>
+
+        <div class="box-content">
+
+          <div class="interests">
+
+            <div class="interest">
+              cars
+            </div>
+
+            <div class="interest">
+              road trips
+            </div>
+
+            <div class="interest">
+              FIRE
+            </div>
+
+            <div class="interest">
+              fixing things
+            </div>
+
+            <div class="interest">
+              learning
+            </div>
+
+            <div class="interest">
+              good food
+            </div>
+
+            <div class="interest">
+              being outside
+            </div>
+
+            <div class="interest">
+              nostalgia
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
 
-    </div>
-
-  </section>
+    </aside>
 
 
-  <!-- ===============================================
-       TOPICS
-       =============================================== -->
+    <!-- =================================================
+         MAIN
+         ================================================= -->
 
-  <section class="topics">
+    <main>
 
 
-    <div class="topic">
+      <!-- WELCOME -->
 
-      <div class="topic-number">
-        01
+      <div class="box">
+
+        <div class="box-title">
+          welcome
+        </div>
+
+        <div class="box-content">
+
+          <p class="content-intro">
+
+            Hey. You found my little corner of the internet.
+
+            <br><br>
+
+            This is where I write about <em>whatever
+            I'm interested in</em> — adventures, machines,
+            money, people, places, mistakes, and the strange
+            process of making a life.
+
+          </p>
+
+        </div>
+
       </div>
 
-      <h3>
-        Adventures
-      </h3>
 
-      <p>
-        Roads, places, trips, wandering,
-        and stories from somewhere else.
-      </p>
+      <!-- FEATURE -->
 
-    </div>
+      <div class="box">
 
+        <div class="box-title">
+          latest adventure
+        </div>
 
-    <div class="topic">
+        <div class="box-content">
 
-      <div class="topic-number">
-        02
+          <!--
+            REPLACE WITH:
+
+            assets/hero.jpg
+          -->
+
+          <img
+            src="assets/hero.jpg"
+            alt="Latest adventure"
+            class="feature-photo"
+          >
+
+          <div class="caption">
+
+            somewhere worth going · 2026
+
+          </div>
+
+        </div>
+
       </div>
 
-      <h3>
-        Machines
-      </h3>
 
-      <p>
-        Cars, tools, projects, and things
-        I probably shouldn't take apart.
-      </p>
+      <!-- BLOG -->
 
-    </div>
+      <div class="box">
+
+        <div class="box-title">
+          latest posts
+        </div>
+
+        <div class="box-content">
 
 
-    <div class="topic">
+          <article class="post">
 
-      <div class="topic-number">
-        03
+            <div class="post-date">
+              september 2026
+            </div>
+
+            <h2>
+              The Case for Staying a Little Bit Lost
+            </h2>
+
+            <p>
+              Maybe having everything figured out isn't
+              actually the goal.
+            </p>
+
+            <a href="#" class="read">
+              read more →
+            </a>
+
+          </article>
+
+
+          <article class="post">
+
+            <div class="post-date">
+              august 2026
+            </div>
+
+            <h2>
+              What Are We Saving All This Money For?
+            </h2>
+
+            <p>
+              Financial independence sounds great.
+              But independence to do what?
+            </p>
+
+            <a href="#" class="read">
+              read more →
+            </a>
+
+          </article>
+
+
+          <article class="post">
+
+            <div class="post-date">
+              august 2026
+            </div>
+
+            <h2>
+              Things Worth Fixing
+            </h2>
+
+            <p>
+              Machines, relationships, old habits,
+              and the strange instinct to repair things.
+            </p>
+
+            <a href="#" class="read">
+              read more →
+            </a>
+
+          </article>
+
+
+        </div>
+
       </div>
 
-      <h3>
-        Money
-      </h3>
 
-      <p>
-        FIRE, freedom, work, saving,
-        and figuring out what it's all for.
-      </p>
+      <!-- QUOTE -->
 
-    </div>
+      <div class="quote">
 
+        "I don't want to grow up.
+        I just want to grow."
 
-    <div class="topic">
+        <small>
+          — never growing up
+        </small>
 
-      <div class="topic-number">
-        04
       </div>
 
-      <h3>
-        Life
-      </h3>
 
-      <p>
-        Curiosity, relationships, growing,
-        and refusing to become boring.
-      </p>
-
-    </div>
+    </main>
 
 
-  </section>
+  </div>
 
 
-  <!-- ===============================================
-       ABOUT
-       =============================================== -->
-
-  <section class="about">
-
-    <div class="about-label">
-      About this place
-    </div>
-
-    <h2>
-      I don't want to grow up.
-      I just want to grow.
-    </h2>
-
-    <p>
-      Never Growing Up is my little corner of the internet.
-    </p>
-
-    <p>
-      There will probably be some FIRE and personal finance.
-      There will probably be cars and machines. There will
-      definitely be adventures.
-    </p>
-
-    <p>
-      But underneath all of that is a simpler idea:
-      life is short, the world is interesting, and I don't
-      want to lose my curiosity just because I'm getting older.
-    </p>
-
-  </section>
-
-
-  <!-- ===============================================
+  <!-- =================================================
        FOOTER
-       =============================================== -->
+       ================================================= -->
 
   <footer>
 
     <div>
-      <strong>Never Growing Up</strong>
-      · made by a human
+      Never Growing Up · © 2026
     </div>
 
     <div>
-      © 2026
+      made by a human · not a corporation
     </div>
 
   </footer>
@@ -1178,5 +1113,6 @@
 
 
 </body>
+
 </html>
 ```
