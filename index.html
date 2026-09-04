@@ -4,26 +4,71 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Never Growing Up</title>
+
+  <meta
+    name="description"
+    content="Never Growing Up — adventures, machines, money, curiosity, and holding on."
+  >
 
   <style>
 
     /* =====================================================
        NEVER GROWING UP
-       Minimal MySpace / Personal Internet Vibe
+       Minimal MySpace / Old Internet Personal Website
+
+       IMAGE NOTES:
+
+       PROFILE IMAGE
+       Recommended: 600 x 600 px
+       Square image
+
+       HERO IMAGE
+       Recommended: 1600 x 900 px
+       Landscape image
+
+       ALBUM ART
+       Recommended: 500 x 500 px
+       Square image
+
+       You can use ANY image hosting service that gives
+       you a direct image URL.
+
+       For GitHub, your image URL will typically look like:
+
+       https://raw.githubusercontent.com/USERNAME/
+       REPOSITORY/main/assets/image.jpg
+
+       Just paste that URL into the marked image spots.
        ===================================================== */
 
+
+    /* -------------------------
+       COLORS
+       ------------------------- */
+
     :root {
+
       --black: #111111;
+
       --white: #ffffff;
-      --offwhite: #f4f4f2;
-      --gray: #e5e5e3;
+
+      --offwhite: #f3f3f1;
+
+      --gray: #e3e3e1;
+
       --gray-dark: #777777;
 
       --blue: #365d87;
+
       --pink: #b56b7c;
+
     }
 
 
@@ -35,7 +80,9 @@
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
 
       background: var(--offwhite);
@@ -50,23 +97,30 @@
       font-size: 13px;
 
       line-height: 1.6;
+
     }
 
 
     a {
+
       color: var(--blue);
 
       text-decoration: none;
+
     }
 
 
     a:hover {
+
       text-decoration: underline;
+
     }
 
 
     img {
+
       max-width: 100%;
+
     }
 
 
@@ -75,19 +129,22 @@
        ------------------------- */
 
     .page {
+
       width: 920px;
 
       max-width: calc(100% - 30px);
 
       margin: 20px auto 50px;
+
     }
 
 
     /* -------------------------
-       TOP LINE
+       TOP BAR
        ------------------------- */
 
     .top {
+
       display: flex;
 
       justify-content: space-between;
@@ -101,11 +158,14 @@
       text-transform: uppercase;
 
       letter-spacing: 1px;
+
     }
 
 
     .top-right {
+
       color: var(--gray-dark);
+
     }
 
 
@@ -114,6 +174,7 @@
        ------------------------- */
 
     .profile-header {
+
       background: var(--white);
 
       border: 1px solid var(--black);
@@ -127,14 +188,23 @@
       grid-template-columns: 150px 1fr;
 
       gap: 25px;
+
     }
 
 
-    /* -------------------------
-       PROFILE PHOTO
-       ------------------------- */
+    /*
+
+      PROFILE IMAGE
+
+      Recommended:
+      600 x 600 px
+
+      Paste your GitHub image URL below.
+
+    */
 
     .profile-photo {
+
       width: 150px;
 
       height: 150px;
@@ -144,6 +214,7 @@
       background: var(--gray);
 
       border: 1px solid var(--black);
+
     }
 
 
@@ -152,6 +223,7 @@
        ------------------------- */
 
     .profile-info h1 {
+
       font-family:
         Georgia,
         "Times New Roman",
@@ -166,24 +238,30 @@
       margin: 0 0 8px;
 
       letter-spacing: -2px;
+
     }
 
 
     .profile-info h1 span {
+
       color: var(--pink);
+
     }
 
 
     .profile-subtitle {
+
       font-size: 12px;
 
       color: var(--gray-dark);
 
       margin-bottom: 18px;
+
     }
 
 
     .status {
+
       display: inline-block;
 
       background: var(--black);
@@ -197,14 +275,16 @@
       text-transform: uppercase;
 
       letter-spacing: 0.7px;
+
     }
 
 
     /* -------------------------
-       SIMPLE NAV
+       NAVIGATION
        ------------------------- */
 
     nav {
+
       margin-top: 10px;
 
       background: var(--black);
@@ -214,10 +294,12 @@
       display: flex;
 
       gap: 20px;
+
     }
 
 
     nav a {
+
       color: white;
 
       font-size: 10px;
@@ -225,6 +307,7 @@
       text-transform: uppercase;
 
       letter-spacing: 1px;
+
     }
 
 
@@ -233,6 +316,7 @@
        ------------------------- */
 
     .columns {
+
       display: grid;
 
       grid-template-columns: 250px 1fr;
@@ -242,6 +326,7 @@
       margin-top: 15px;
 
       align-items: start;
+
     }
 
 
@@ -250,15 +335,18 @@
        ------------------------- */
 
     .box {
+
       background: var(--white);
 
       border: 1px solid var(--black);
 
       margin-bottom: 15px;
+
     }
 
 
     .box-title {
+
       background: var(--gray);
 
       border-bottom: 1px solid var(--black);
@@ -272,19 +360,23 @@
       text-transform: uppercase;
 
       letter-spacing: 1px;
+
     }
 
 
     .box-content {
+
       padding: 13px;
+
     }
 
 
     /* -------------------------
-       LEFT SIDEBAR
+       ABOUT ME
        ------------------------- */
 
     .about-me {
+
       font-family:
         Georgia,
         "Times New Roman",
@@ -295,13 +387,16 @@
       line-height: 1.4;
 
       margin: 0;
+
     }
 
 
     .tiny {
+
       font-size: 10px;
 
       color: var(--gray-dark);
+
     }
 
 
@@ -310,30 +405,38 @@
        ------------------------- */
 
     .details {
+
       list-style: none;
 
       margin: 0;
 
       padding: 0;
+
     }
 
 
     .details li {
+
       padding: 5px 0;
 
       border-bottom: 1px dotted #bbb;
 
       font-size: 11px;
+
     }
 
 
     .details li:last-child {
+
       border-bottom: 0;
+
     }
 
 
     .details strong {
+
       color: var(--black);
+
     }
 
 
@@ -342,6 +445,7 @@
        ------------------------- */
 
     .music {
+
       display: grid;
 
       grid-template-columns: 55px 1fr;
@@ -349,10 +453,21 @@
       gap: 10px;
 
       align-items: center;
+
     }
 
 
+    /*
+
+      ALBUM ART
+
+      Recommended:
+      500 x 500 px
+
+    */
+
     .album {
+
       width: 55px;
 
       height: 55px;
@@ -362,28 +477,34 @@
       background: var(--gray);
 
       border: 1px solid var(--black);
+
     }
 
 
     .music-title {
+
       font-weight: bold;
 
       font-size: 11px;
+
     }
 
 
     .music-artist {
+
       color: var(--gray-dark);
 
       font-size: 10px;
+
     }
 
 
     /* -------------------------
-       MAIN CONTENT
+       MAIN INTRO
        ------------------------- */
 
     .content-intro {
+
       font-family:
         Georgia,
         "Times New Roman",
@@ -394,21 +515,36 @@
       line-height: 1.35;
 
       margin: 0;
+
     }
 
 
     .content-intro em {
+
       color: var(--pink);
 
       font-style: normal;
+
     }
 
 
     /* -------------------------
-       FEATURE PHOTO
+       HERO IMAGE
        ------------------------- */
 
+    /*
+
+      HERO IMAGE
+
+      Recommended:
+      1600 x 900 px
+
+      Landscape photo.
+
+    */
+
     .feature-photo {
+
       width: 100%;
 
       height: 350px;
@@ -419,43 +555,53 @@
 
       border: 1px solid var(--black);
 
-      margin-top: 20px;
+      margin-top: 5px;
+
     }
 
 
     .caption {
+
       font-size: 9px;
 
       color: var(--gray-dark);
 
       margin-top: 5px;
+
     }
 
 
     /* -------------------------
-       BLOG
+       BLOG POSTS
        ------------------------- */
 
     .post {
+
       padding: 18px 0;
 
       border-bottom: 1px dotted #999;
+
     }
 
 
     .post:first-child {
+
       padding-top: 0;
+
     }
 
 
     .post:last-child {
+
       border-bottom: 0;
 
       padding-bottom: 0;
+
     }
 
 
     .post-date {
+
       font-size: 9px;
 
       text-transform: uppercase;
@@ -463,10 +609,12 @@
       letter-spacing: 1px;
 
       color: var(--gray-dark);
+
     }
 
 
     .post h2 {
+
       font-family:
         Georgia,
         "Times New Roman",
@@ -479,19 +627,23 @@
       line-height: 1.2;
 
       margin: 3px 0 5px;
+
     }
 
 
     .post p {
+
       color: #444;
 
       margin: 0;
 
       font-size: 12px;
+
     }
 
 
     .read {
+
       display: inline-block;
 
       margin-top: 7px;
@@ -499,23 +651,27 @@
       font-size: 10px;
 
       text-transform: uppercase;
+
     }
 
 
     /* -------------------------
-       FRIENDS / INTERESTS
+       INTERESTS
        ------------------------- */
 
     .interests {
+
       display: flex;
 
       flex-wrap: wrap;
 
       gap: 5px;
+
     }
 
 
     .interest {
+
       border: 1px solid #aaa;
 
       padding: 3px 7px;
@@ -525,14 +681,16 @@
       font-size: 9px;
 
       text-transform: uppercase;
+
     }
 
 
     /* -------------------------
-       LITTLE QUOTE
+       QUOTE
        ------------------------- */
 
     .quote {
+
       background: var(--black);
 
       color: white;
@@ -551,10 +709,12 @@
       line-height: 1.35;
 
       text-align: center;
+
     }
 
 
     .quote small {
+
       display: block;
 
       margin-top: 8px;
@@ -568,6 +728,7 @@
       text-transform: uppercase;
 
       letter-spacing: 1px;
+
     }
 
 
@@ -576,6 +737,7 @@
        ------------------------- */
 
     footer {
+
       border-top: 1px solid var(--black);
 
       margin-top: 30px;
@@ -586,9 +748,19 @@
 
       justify-content: space-between;
 
+      gap: 20px;
+
       font-size: 9px;
 
       color: var(--gray-dark);
+
+    }
+
+
+    footer strong {
+
+      color: var(--black);
+
     }
 
 
@@ -599,52 +771,75 @@
     @media (max-width: 700px) {
 
       .page {
+
         width: calc(100% - 20px);
 
         margin-top: 10px;
+
+      }
+
+
+      .top-right {
+
+        display: none;
+
       }
 
 
       .profile-header {
+
         grid-template-columns: 1fr;
 
         gap: 15px;
+
       }
 
 
       .profile-photo {
+
         width: 120px;
 
         height: 120px;
+
       }
 
 
       .profile-info h1 {
+
         font-size: 38px;
+
       }
 
 
       nav {
+
         gap: 13px;
 
         flex-wrap: wrap;
+
       }
 
 
       .columns {
+
         grid-template-columns: 1fr;
+
       }
 
 
       .feature-photo {
+
         height: 250px;
+
       }
 
 
       footer {
+
         flex-direction: column;
 
         gap: 5px;
+
       }
 
     }
@@ -685,13 +880,26 @@
 
 
     <!--
-      REPLACE THIS IMAGE WITH:
 
-      assets/profile.jpg
+      ===============================
+      PROFILE PHOTO
+      ===============================
+
+      Recommended image size:
+      600 x 600 px
+
+      Paste your GitHub RAW image URL
+      between the quotation marks below.
+
+      Example:
+
+      src="https://raw.githubusercontent.com/
+      YOURNAME/YOURREPO/main/assets/profile.jpg"
+
     -->
 
     <img
-      src="assets/profile.jpg"
+      src="PASTE_PROFILE_IMAGE_URL_HERE"
       alt="Profile photo"
       class="profile-photo"
     >
@@ -724,24 +932,32 @@
   <!-- =================================================
        NAVIGATION
 
-       ADD / REMOVE LINKS AS YOU BUILD YOUR SITE
+       ADD YOUR OWN LINKS HERE
        ================================================= -->
 
   <nav>
 
-    <a href="#">home</a>
+    <a href="#">
+      home
+    </a>
 
-    <a href="#">blog</a>
+    <a href="#">
+      blog
+    </a>
 
-    <a href="#">adventures</a>
+    <a href="#">
+      adventures
+    </a>
 
-    <a href="#">about</a>
+    <a href="#">
+      about
+    </a>
 
   </nav>
 
 
   <!-- =================================================
-       COLUMNS
+       TWO COLUMN CONTENT
        ================================================= -->
 
   <div class="columns">
@@ -825,7 +1041,7 @@
       </div>
 
 
-      <!-- MUSIC -->
+      <!-- CURRENTLY LISTENING -->
 
       <div class="box">
 
@@ -837,26 +1053,37 @@
 
           <div class="music">
 
-            <!--
-              REPLACE WITH:
 
-              assets/album.jpg
+            <!--
+
+              ===============================
+              ALBUM ART
+              ===============================
+
+              Recommended:
+              500 x 500 px
+
             -->
 
             <img
-              src="assets/album.jpg"
+              src="PASTE_ALBUM_IMAGE_URL_HERE"
               alt="Album artwork"
               class="album"
             >
 
+
             <div>
 
               <div class="music-title">
+
                 Song Title
+
               </div>
 
               <div class="music-artist">
+
                 Artist Name
+
               </div>
 
             </div>
@@ -923,7 +1150,7 @@
 
 
     <!-- =================================================
-         MAIN
+         MAIN CONTENT
          ================================================= -->
 
     <main>
@@ -945,10 +1172,11 @@
 
             <br><br>
 
-            This is where I write about <em>whatever
-            I'm interested in</em> — adventures, machines,
-            money, people, places, mistakes, and the strange
-            process of making a life.
+            This is where I write about
+            <em>whatever I'm interested in</em> —
+            adventures, machines, money, people,
+            places, mistakes, and the strange process
+            of making a life.
 
           </p>
 
@@ -957,7 +1185,14 @@
       </div>
 
 
-      <!-- FEATURE -->
+      <!-- =================================================
+           FEATURED IMAGE
+
+           Recommended:
+           1600 x 900 px
+
+           Paste your GitHub image URL below.
+           ================================================= -->
 
       <div class="box">
 
@@ -967,14 +1202,8 @@
 
         <div class="box-content">
 
-          <!--
-            REPLACE WITH:
-
-            assets/hero.jpg
-          -->
-
           <img
-            src="assets/hero.jpg"
+            src="PASTE_HERO_IMAGE_URL_HERE"
             alt="Latest adventure"
             class="feature-photo"
           >
@@ -990,7 +1219,9 @@
       </div>
 
 
-      <!-- BLOG -->
+      <!-- =================================================
+           LATEST POSTS
+           ================================================= -->
 
       <div class="box">
 
@@ -1000,6 +1231,8 @@
 
         <div class="box-content">
 
+
+          <!-- POST 01 -->
 
           <article class="post">
 
@@ -1023,6 +1256,8 @@
           </article>
 
 
+          <!-- POST 02 -->
+
           <article class="post">
 
             <div class="post-date">
@@ -1044,6 +1279,8 @@
 
           </article>
 
+
+          <!-- POST 03 -->
 
           <article class="post">
 
@@ -1072,7 +1309,9 @@
       </div>
 
 
-      <!-- QUOTE -->
+      <!-- =================================================
+           QUOTE
+           ================================================= -->
 
       <div class="quote">
 
@@ -1099,11 +1338,19 @@
   <footer>
 
     <div>
-      Never Growing Up · © 2026
+
+      <strong>Never Growing Up</strong>
+
+      · © 2026
+
     </div>
 
+
     <div>
-      made by a human · not a corporation
+
+      made by a human ·
+      not a corporation
+
     </div>
 
   </footer>
