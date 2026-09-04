@@ -1,51 +1,30 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
 
   <title>Never Growing Up</title>
 
-  <meta
-    name="description"
-    content="Never Growing Up — adventures, machines, curiosity, and holding on."
-  >
+<meta
+name="description"
+content="Never Growing Up — adventures, machines, curiosity, and holding on."
+
+>
 
   <style>
 
     /* =====================================================
        NEVER GROWING UP
        Minimal MySpace / Old Internet Personal Website
-
-       IMAGE NOTES:
-
-       PROFILE IMAGE
-       Recommended: 600 x 600 px
-       Square image
-
-       HERO IMAGE
-       Recommended: 1600 x 900 px
-       Landscape image
-
-       ALBUM ART
-       Recommended: 500 x 500 px
-       Square image
-
-       You can use ANY image hosting service that gives
-       you a direct image URL.
-
-       For GitHub, your image URL will typically look like:
-
-       https://raw.githubusercontent.com/USERNAME/
-       REPOSITORY/main/assets/image.jpg
-
-       Just paste that URL into the marked image spots.
+       Fully responsive image handling
        ===================================================== */
 
 
@@ -56,17 +35,11 @@
     :root {
 
       --black: #111111;
-
       --white: #ffffff;
-
       --offwhite: #f3f3f1;
-
       --gray: #e3e3e1;
-
       --gray-dark: #777777;
-
       --blue: #365d87;
-
       --pink: #b56b7c;
 
     }
@@ -81,9 +54,18 @@
     }
 
 
+    html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+
     body {
 
       margin: 0;
+
+      width: 100%;
+      min-width: 0;
 
       background: var(--offwhite);
 
@@ -117,7 +99,28 @@
     }
 
 
+    /* =====================================================
+       GLOBAL IMAGE FIX
+       ===================================================== */
+
     img {
+
+      display: block;
+
+      max-width: 100%;
+
+    }
+
+
+    /*
+      Prevent images from ever overflowing their containers.
+      Images that have their own height rules below will
+      retain the correct object-fit behavior.
+    */
+
+    .profile-photo,
+    .album,
+    .feature-photo {
 
       max-width: 100%;
 
@@ -185,31 +188,30 @@
 
       display: grid;
 
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 150px minmax(0, 1fr);
 
       gap: 25px;
+
+      min-width: 0;
 
     }
 
 
-    /*
+    /* -------------------------
+       PROFILE IMAGE
+       ------------------------- */
 
-      PROFILE IMAGE
-
-      Recommended:
-      600 x 600 px
-
-      Paste your GitHub image URL below.
-
-    */
-
-    .images/IMG_5390.JPG {
+    .profile-photo {
 
       width: 150px;
 
       height: 150px;
 
+      max-width: 150px;
+
       object-fit: cover;
+
+      object-position: center;
 
       background: var(--gray);
 
@@ -221,6 +223,13 @@
     /* -------------------------
        PROFILE INFO
        ------------------------- */
+
+    .profile-info {
+
+      min-width: 0;
+
+    }
+
 
     .profile-info h1 {
 
@@ -238,6 +247,8 @@
       margin: 0 0 8px;
 
       letter-spacing: -2px;
+
+      overflow-wrap: break-word;
 
     }
 
@@ -295,6 +306,8 @@
 
       gap: 20px;
 
+      flex-wrap: wrap;
+
     }
 
 
@@ -319,13 +332,23 @@
 
       display: grid;
 
-      grid-template-columns: 250px 1fr;
+      grid-template-columns: 250px minmax(0, 1fr);
 
       gap: 15px;
 
       margin-top: 15px;
 
       align-items: start;
+
+      min-width: 0;
+
+    }
+
+
+    .columns > aside,
+    .columns > main {
+
+      min-width: 0;
 
     }
 
@@ -341,6 +364,10 @@
       border: 1px solid var(--black);
 
       margin-bottom: 15px;
+
+      min-width: 0;
+
+      overflow: hidden;
 
     }
 
@@ -367,6 +394,8 @@
     .box-content {
 
       padding: 13px;
+
+      min-width: 0;
 
     }
 
@@ -448,23 +477,20 @@
 
       display: grid;
 
-      grid-template-columns: 55px 1fr;
+      grid-template-columns: 55px minmax(0, 1fr);
 
       gap: 10px;
 
       align-items: center;
 
+      min-width: 0;
+
     }
 
 
-    /*
-
-      ALBUM ART
-
-      Recommended:
-      500 x 500 px
-
-    */
+    /* -------------------------
+       ALBUM ART
+       ------------------------- */
 
     .album {
 
@@ -472,7 +498,11 @@
 
       height: 55px;
 
+      max-width: 55px;
+
       object-fit: cover;
+
+      object-position: center;
 
       background: var(--gray);
 
@@ -486,6 +516,8 @@
       font-weight: bold;
 
       font-size: 11px;
+
+      overflow-wrap: break-word;
 
     }
 
@@ -528,28 +560,25 @@
     }
 
 
-    /* -------------------------
+    /* =====================================================
        HERO IMAGE
-       ------------------------- */
-
-    /*
-
-      HERO IMAGE
-
-      Recommended:
-      1600 x 900 px
-
-      Landscape photo.
-
-    */
+       ===================================================== */
 
     .feature-photo {
 
+      /*
+        Width is fluid.
+        Height is automatic so the image keeps
+        its original aspect ratio on mobile.
+      */
+
       width: 100%;
 
-      height: 350px;
+      height: auto;
 
-      object-fit: cover;
+      min-height: 0;
+
+      object-fit: contain;
 
       background: var(--gray);
 
@@ -627,6 +656,8 @@
       line-height: 1.2;
 
       margin: 3px 0 5px;
+
+      overflow-wrap: break-word;
 
     }
 
@@ -764,17 +795,26 @@
     }
 
 
-    /* -------------------------
+    /* =====================================================
        MOBILE
-       ------------------------- */
+       ===================================================== */
 
     @media (max-width: 700px) {
+
+      body {
+
+        font-size: 13px;
+
+      }
+
 
       .page {
 
         width: calc(100% - 20px);
 
-        margin-top: 10px;
+        max-width: none;
+
+        margin: 10px auto 30px;
 
       }
 
@@ -786,11 +826,17 @@
       }
 
 
+      /* -------------------------
+         PROFILE
+         ------------------------- */
+
       .profile-header {
 
         grid-template-columns: 1fr;
 
         gap: 15px;
+
+        padding: 15px;
 
       }
 
@@ -801,6 +847,8 @@
 
         height: 120px;
 
+        max-width: 120px;
+
       }
 
 
@@ -808,31 +856,134 @@
 
         font-size: 38px;
 
+        letter-spacing: -1.5px;
+
+        line-height: 1.05;
+
       }
 
+
+      .profile-subtitle {
+
+        margin-bottom: 12px;
+
+      }
+
+
+      /* -------------------------
+         NAV
+         ------------------------- */
 
       nav {
 
-        gap: 13px;
+        gap: 10px 15px;
 
-        flex-wrap: wrap;
+        padding: 8px 10px;
 
       }
 
+
+      nav a {
+
+        font-size: 9px;
+
+      }
+
+
+      /* -------------------------
+         COLUMNS
+         ------------------------- */
 
       .columns {
 
         grid-template-columns: 1fr;
 
+        gap: 0;
+
       }
 
+
+      /* -------------------------
+         BOXES
+         ------------------------- */
+
+      .box-content {
+
+        padding: 12px;
+
+      }
+
+
+      /* -------------------------
+         MAIN INTRO
+         ------------------------- */
+
+      .content-intro {
+
+        font-size: 20px;
+
+      }
+
+
+      /* -------------------------
+         HERO IMAGE
+         ------------------------- */
 
       .feature-photo {
 
-        height: 250px;
+        width: 100%;
+
+        height: auto;
+
+        max-width: 100%;
+
+        object-fit: contain;
 
       }
 
+
+      /* -------------------------
+         ALBUM
+         ------------------------- */
+
+      .album {
+
+        width: 55px;
+
+        height: 55px;
+
+        max-width: 55px;
+
+      }
+
+
+      /* -------------------------
+         POSTS
+         ------------------------- */
+
+      .post h2 {
+
+        font-size: 20px;
+
+      }
+
+
+      /* -------------------------
+         QUOTE
+         ------------------------- */
+
+      .quote {
+
+        font-size: 17px;
+
+        padding: 18px 14px;
+
+      }
+
+
+      /* -------------------------
+         FOOTER
+         ------------------------- */
 
       footer {
 
@@ -844,16 +995,69 @@
 
     }
 
+
+    /* =====================================================
+       VERY SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 400px) {
+
+      .page {
+
+        width: calc(100% - 14px);
+
+      }
+
+
+      .profile-header {
+
+        padding: 12px;
+
+      }
+
+
+      .profile-photo {
+
+        width: 100px;
+
+        height: 100px;
+
+        max-width: 100px;
+
+      }
+
+
+      .profile-info h1 {
+
+        font-size: 32px;
+
+      }
+
+
+      .content-intro {
+
+        font-size: 18px;
+
+      }
+
+
+      .feature-photo {
+
+        width: 100%;
+
+        height: auto;
+
+      }
+
+    }
+
   </style>
 
 </head>
 
-
 <body>
 
-
 <div class="page">
-
 
   <!-- =================================================
        TOP
@@ -861,16 +1065,17 @@
 
   <div class="top">
 
-    <div>
-      never growing up
-    </div>
+```
+<div>
+  never growing up
+</div>
 
-    <div class="top-right">
-      welcome to my page
-    </div>
+<div class="top-right">
+  welcome to my page
+</div>
+```
 
   </div>
-
 
   <!-- =================================================
        PROFILE HEADER
@@ -878,83 +1083,64 @@
 
   <header class="profile-header">
 
+```
+<!-- PROFILE PHOTO -->
 
-    <!--
-
-      ===============================
-      PROFILE PHOTO
-      ===============================
-
-      Recommended image size:
-      600 x 600 px
-
-      Paste your GitHub RAW image URL
-      between the quotation marks below.
-
-      Example:
-
-      src="https://raw.githubusercontent.com/
-      YOURNAME/YOURREPO/main/assets/profile.jpg"
-
-    -->
-
-    <img
-      src="images/IMG_5390.JPG"
-      alt="Profile photo"
-      class="profile-photo"
-    >
+<img
+  src="images/IMG_5390.JPG"
+  alt="Profile photo"
+  class="profile-photo"
+>
 
 
-    <div class="profile-info">
+<div class="profile-info">
 
-      <h1>
-        Never <span>Growing Up.</span>
-      </h1>
+  <h1>
+    Never <span>Growing Up.</span>
+  </h1>
 
-      <div class="profile-subtitle">
+  <div class="profile-subtitle">
 
-        adventures · machines · life
+    adventures · machines · life
 
-      </div>
+  </div>
 
-      <div class="status">
+  <div class="status">
 
-        ● currently figuring it out
+    ● currently figuring it out
 
-      </div>
+  </div>
 
-    </div>
-
+</div>
+```
 
   </header>
 
-
   <!-- =================================================
        NAVIGATION
-
-       ADD YOUR OWN LINKS HERE
        ================================================= -->
 
   <nav>
 
-    <a href="#">
-      home
-    </a>
+```
+<a href="#">
+  home
+</a>
 
-    <a href="#">
-      blog
-    </a>
+<a href="#">
+  blog
+</a>
 
-    <a href="#">
-      adventures
-    </a>
+<a href="#">
+  adventures
+</a>
 
-    <a href="#">
-      about
-    </a>
+<a href="#">
+  about
+</a>
+```
 
   </nav>
-
 
   <!-- =================================================
        TWO COLUMN CONTENT
@@ -962,366 +1148,349 @@
 
   <div class="columns">
 
+```
+<!-- =================================================
+     SIDEBAR
+     ================================================= -->
 
-    <!-- =================================================
-         SIDEBAR
-         ================================================= -->
+<aside>
 
-    <aside>
 
+  <!-- ABOUT -->
 
-      <!-- ABOUT -->
+  <div class="box">
 
-      <div class="box">
+    <div class="box-title">
+      about me
+    </div>
 
-        <div class="box-title">
-          about me
-        </div>
+    <div class="box-content">
 
-        <div class="box-content">
+      <p class="about-me">
 
-          <p class="about-me">
+        I don't want to grow up.
 
-            I don't want to grow up.
+        <br><br>
 
-            <br><br>
+        I just want to keep being curious.
 
-            I just want to keep being curious.
+      </p>
 
-          </p>
+      <p class="tiny">
 
-          <p class="tiny">
+        Somewhere on the internet ·
+        probably distracted by something
 
-            Somewhere on the internet ·
-            probably distracted by something
+      </p>
 
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- DETAILS -->
-
-      <div class="box">
-
-        <div class="box-title">
-          details
-        </div>
-
-        <div class="box-content">
-
-          <ul class="details">
-
-            <li>
-              <strong>Currently:</strong>
-              Somewhere interesting
-            </li>
-
-            <li>
-              <strong>Occupation:</strong>
-              Figuring it out
-            </li>
-
-            <li>
-              <strong>Mood:</strong>
-              Curious
-            </li>
-
-            <li>
-              <strong>Goal:</strong>
-              More life, less stuff
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- CURRENTLY LISTENING -->
-
-      <div class="box">
-
-        <div class="box-title">
-          currently listening
-        </div>
-
-        <div class="box-content">
-
-          <div class="music">
-
-
-            <!--
-
-              ===============================
-              ALBUM ART
-              ===============================
-
-              Recommended:
-              500 x 500 px
-
-            -->
-
-            <img
-              src="images/paramore_artwork_header.jpg"
-              alt="Album artwork"
-              class="album"
-            >
-
-
-            <div>
-
-              <div class="music-title">
-
-                Still Into You
-
-              </div>
-
-              <div class="music-artist">
-
-                Paramore
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- INTERESTS -->
-
-      <div class="box">
-
-        <div class="box-title">
-          interests
-        </div>
-
-        <div class="box-content">
-
-          <div class="interests">
-
-            <div class="interest">
-              machines
-            </div>
-
-            <div class="interest">
-              road trips
-            </div>
-
-            <div class="interest">
-              fixing things
-            </div>
-
-            <div class="interest">
-              learning
-            </div>
-
-            <div class="interest">
-              being outside
-            </div>
-
-            <div class="interest">
-              nostalgia
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-    </aside>
-
-
-    <!-- =================================================
-         MAIN CONTENT
-         ================================================= -->
-
-    <main>
-
-
-      <!-- WELCOME -->
-
-      <div class="box">
-
-        <div class="box-title">
-          welcome
-        </div>
-
-        <div class="box-content">
-
-          <p class="content-intro">
-
-            Hey. You found my little corner of the internet.
-
-            <br><br>
-
-            This is where I write about
-            <em>whatever I'm interested in</em> —
-            adventures, machines, people,
-            places, mistakes, and the strange process
-            of making a life.
-
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- =================================================
-           FEATURED IMAGE
-
-           Recommended:
-           1600 x 900 px
-
-           Paste your GitHub image URL below.
-           ================================================= -->
-
-      <div class="box">
-
-        <div class="box-title">
-          latest adventure
-        </div>
-
-        <div class="box-content">
-
-          <img
-            src="PASTE_HERO_IMAGE_URL_HERE"
-            alt="Latest adventure"
-            class="feature-photo"
-          >
-
-          <div class="caption">
-
-            somewhere worth going · 2026
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =================================================
-           LATEST POSTS
-           ================================================= -->
-
-      <div class="box">
-
-        <div class="box-title">
-          latest posts
-        </div>
-
-        <div class="box-content">
-
-
-          <!-- POST 01 -->
-
-          <article class="post">
-
-            <div class="post-date">
-              september 2026
-            </div>
-
-            <h2>
-              The Case for Staying a Little Bit Lost
-            </h2>
-
-            <p>
-              Maybe having everything figured out isn't
-              actually the goal.
-            </p>
-
-            <a href="#" class="read">
-              read more →
-            </a>
-
-          </article>
-
-
-          <!-- POST 02 -->
-
-          <article class="post">
-
-            <div class="post-date">
-              august 2026
-            </div>
-
-            <h2>
-              What Are We Saving All This Money For?
-            </h2>
-
-            <p>
-              Financial independence sounds great.
-              But independence to do what?
-            </p>
-
-            <a href="#" class="read">
-              read more →
-            </a>
-
-          </article>
-
-
-          <!-- POST 03 -->
-
-          <article class="post">
-
-            <div class="post-date">
-              august 2026
-            </div>
-
-            <h2>
-              Things Worth Fixing
-            </h2>
-
-            <p>
-              Machines, relationships, old habits,
-              and the strange instinct to repair things.
-            </p>
-
-            <a href="#" class="read">
-              read more →
-            </a>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-
-      <!-- =================================================
-           QUOTE
-           ================================================= -->
-
-      <div class="quote">
-
-        "I don't want to grow up.
-        I just want to grow."
-
-        <small>
-          — never growing up
-        </small>
-
-      </div>
-
-
-    </main>
-
+    </div>
 
   </div>
 
+
+  <!-- DETAILS -->
+
+  <div class="box">
+
+    <div class="box-title">
+      details
+    </div>
+
+    <div class="box-content">
+
+      <ul class="details">
+
+        <li>
+          <strong>Currently:</strong>
+          Somewhere interesting
+        </li>
+
+        <li>
+          <strong>Occupation:</strong>
+          Figuring it out
+        </li>
+
+        <li>
+          <strong>Mood:</strong>
+          Curious
+        </li>
+
+        <li>
+          <strong>Goal:</strong>
+          More life, less stuff
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- CURRENTLY LISTENING -->
+
+  <div class="box">
+
+    <div class="box-title">
+      currently listening
+    </div>
+
+    <div class="box-content">
+
+      <div class="music">
+
+
+        <img
+          src="images/paramore_artwork_header.jpg"
+          alt="Album artwork"
+          class="album"
+        >
+
+
+        <div>
+
+          <div class="music-title">
+
+            Still Into You
+
+          </div>
+
+          <div class="music-artist">
+
+            Paramore
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- INTERESTS -->
+
+  <div class="box">
+
+    <div class="box-title">
+      interests
+    </div>
+
+    <div class="box-content">
+
+      <div class="interests">
+
+        <div class="interest">
+          machines
+        </div>
+
+        <div class="interest">
+          road trips
+        </div>
+
+        <div class="interest">
+          fixing things
+        </div>
+
+        <div class="interest">
+          learning
+        </div>
+
+        <div class="interest">
+          being outside
+        </div>
+
+        <div class="interest">
+          nostalgia
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</aside>
+
+
+<!-- =================================================
+     MAIN CONTENT
+     ================================================= -->
+
+<main>
+
+
+  <!-- WELCOME -->
+
+  <div class="box">
+
+    <div class="box-title">
+      welcome
+    </div>
+
+    <div class="box-content">
+
+      <p class="content-intro">
+
+        Hey. You found my little corner of the internet.
+
+        <br><br>
+
+        This is where I write about
+        <em>whatever I'm interested in</em> —
+        adventures, machines, people,
+        places, mistakes, and the strange process
+        of making a life.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       FEATURED IMAGE
+       ================================================= -->
+
+  <div class="box">
+
+    <div class="box-title">
+      latest adventure
+    </div>
+
+    <div class="box-content">
+
+      <img
+        src="PASTE_HERO_IMAGE_URL_HERE"
+        alt="Latest adventure"
+        class="feature-photo"
+      >
+
+      <div class="caption">
+
+        somewhere worth going · 2026
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       LATEST POSTS
+       ================================================= -->
+
+  <div class="box">
+
+    <div class="box-title">
+      latest posts
+    </div>
+
+    <div class="box-content">
+
+
+      <!-- POST 01 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          september 2026
+        </div>
+
+        <h2>
+          The Case for Staying a Little Bit Lost
+        </h2>
+
+        <p>
+          Maybe having everything figured out isn't
+          actually the goal.
+        </p>
+
+        <a href="#" class="read">
+          read more →
+        </a>
+
+      </article>
+
+
+      <!-- POST 02 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          august 2026
+        </div>
+
+        <h2>
+          What Are We Saving All This Money For?
+        </h2>
+
+        <p>
+          Financial independence sounds great.
+          But independence to do what?
+        </p>
+
+        <a href="#" class="read">
+          read more →
+        </a>
+
+      </article>
+
+
+      <!-- POST 03 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          august 2026
+        </div>
+
+        <h2>
+          Things Worth Fixing
+        </h2>
+
+        <p>
+          Machines, relationships, old habits,
+          and the strange instinct to repair things.
+        </p>
+
+        <a href="#" class="read">
+          read more →
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       QUOTE
+       ================================================= -->
+
+  <div class="quote">
+
+    "I don't want to grow up.
+    I just want to grow."
+
+    <small>
+      — never growing up
+    </small>
+
+  </div>
+
+
+</main>
+```
+
+  </div>
 
   <!-- =================================================
        FOOTER
@@ -1329,29 +1498,28 @@
 
   <footer>
 
-    <div>
+```
+<div>
 
-      <strong>Never Growing Up</strong>
+  <strong>Never Growing Up</strong>
 
-      · © 2026
-
-    </div>
-
-
-    <div>
-
-      made by a human ·
-      not a corporation
-
-    </div>
-
-  </footer>
-
+  · © 2026
 
 </div>
 
 
+<div>
+
+  made by a human ·
+  not a corporation
+
+</div>
+```
+
+  </footer>
+
+</div>
+
 </body>
 
 </html>
-```
