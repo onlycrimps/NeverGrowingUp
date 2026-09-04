@@ -1,133 +1,574 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Never Growing Up</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff6ec4, #7873f5, #42e695);
-  color: white;
-}
+  :root {
+    --paper: #f5f1e8;
+    --paper-dark: #e9e2d3;
+    --ink: #252a27;
+    --muted: #6d736d;
+    --green: #52675b;
+    --green-dark: #35463d;
+    --orange: #c9794d;
+    --white: #fffdf8;
+  }
 
-/* HERO */
-header {
-  text-align: center;
-  padding: 80px 20px;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-header h1 {
-  font-size: 3em;
-  margin: 0;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-header p {
-  font-size: 1.2em;
-  opacity: 0.9;
-}
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+  }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 20px;
-  gap: 20px;
-}
+  /* --------------------
+     NAVIGATION
+  -------------------- */
 
-/* CARD STYLE */
-.card {
-  background: rgba(0,0,0,0.3);
-  border-radius: 15px;
-  padding: 25px;
-  transition: 0.3s;
-  backdrop-filter: blur(10px);
-}
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+  }
 
-.card:hover {
-  transform: scale(1.05) rotate(1deg);
-  background: rgba(0,0,0,0.5);
-}
+  .logo {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--green-dark);
+  }
 
-/* DIFFERENT COLORS */
-.card:nth-child(1) { background: rgba(255, 99, 132, 0.4); }
-.card:nth-child(2) { background: rgba(54, 162, 235, 0.4); }
-.card:nth-child(3) { background: rgba(255, 206, 86, 0.4); }
-.card:nth-child(4) { background: rgba(75, 192, 192, 0.4); }
-.card:nth-child(5) { background: rgba(153, 102, 255, 0.4); }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 0.9rem;
+  }
 
-h2 {
-  margin-top: 0;
-}
+  nav a:hover {
+    color: var(--orange);
+  }
 
-/* SECTION */
-.section {
-  padding: 40px 20px;
-  text-align: center;
-}
+  /* --------------------
+     HERO
+  -------------------- */
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.8;
-}
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 110px 24px 130px;
+  }
+
+  .eyebrow {
+    font-family: "Segoe UI", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.72rem;
+    color: var(--orange);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    max-width: 800px;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -5px;
+    font-weight: 500;
+    margin: 0 0 35px;
+    color: var(--green-dark);
+  }
+
+  .hero h1 span {
+    color: var(--orange);
+  }
+
+  .hero p {
+    max-width: 650px;
+    font-size: 1.3rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .hero-note {
+    margin-top: 35px;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.85rem !important;
+    color: var(--green) !important;
+  }
+
+  /* --------------------
+     INTRO
+  -------------------- */
+
+  .intro {
+    background: var(--green-dark);
+    color: var(--paper);
+  }
+
+  .intro-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 90px 24px;
+  }
+
+  .intro h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 400;
+    margin: 0 0 30px;
+  }
+
+  .intro p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    color: #d8ded8;
+  }
+
+  /* --------------------
+     POSTS
+  -------------------- */
+
+  .posts {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 24px;
+  }
+
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #cfc8ba;
+    margin-bottom: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+
+  .section-heading span {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+
+  .post {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 35px;
+    padding: 35px 0;
+    border-bottom: 1px solid #d8d1c4;
+    text-decoration: none;
+    color: inherit;
+    transition: padding 0.25s ease;
+  }
+
+  .post:hover {
+    padding-left: 10px;
+  }
+
+  .post-date {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding-top: 7px;
+  }
+
+  .post h3 {
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 0 0 8px;
+    color: var(--green-dark);
+  }
+
+  .post p {
+    margin: 0;
+    color: var(--muted);
+    max-width: 650px;
+  }
+
+  /* --------------------
+     THEMES
+  -------------------- */
+
+  .themes {
+    background: var(--paper-dark);
+  }
+
+  .themes-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 24px;
+  }
+
+  .themes h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0 45px;
+  }
+
+  .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+  }
+
+  .theme {
+    border-top: 3px solid var(--green);
+    padding-top: 20px;
+  }
+
+  .theme h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0 0 10px;
+  }
+
+  .theme p {
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* --------------------
+     ABOUT
+  -------------------- */
+
+  .about {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 110px 24px;
+    text-align: center;
+  }
+
+  .about h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 25px;
+    color: var(--green-dark);
+  }
+
+  .about p {
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+
+  /* --------------------
+     FOOTER
+  -------------------- */
+
+  footer {
+    background: var(--green-dark);
+    color: #cbd2cc;
+    text-align: center;
+    padding: 45px 24px;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.8rem;
+  }
+
+  footer strong {
+    color: var(--paper);
+  }
+
+  /* --------------------
+     MOBILE
+  -------------------- */
+
+  @media (max-width: 700px) {
+
+    nav {
+      padding: 22px 20px;
+    }
+
+    nav div:last-child {
+      display: none;
+    }
+
+    .hero {
+      padding: 75px 20px 90px;
+    }
+
+    .hero h1 {
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .intro-inner,
+    .posts,
+    .themes-inner,
+    .about {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .post {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+
+    .post-date {
+      padding-top: 0;
+    }
+
+    .theme-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .section-heading span {
+      display: none;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🎢 I Refuse to Grow Up</h1>
-  <p>Money • Machines • Meaning • Marriage</p>
-  <p>Welcome to my playground.</p>
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="logo">Never Growing Up</div>
+
+  <div>
+    <a href="#writing">Writing</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="eyebrow">A personal blog</div>
+
+  <h1>
+    Never<br>
+    <span>Growing Up.</span>
+  </h1>
+
+  <p>
+    Thoughts, adventures, machines, money, mistakes, and the strange
+    experience of trying to make a life worth remembering.
+  </p>
+
+  <p class="hero-note">
+    Growing older is inevitable. Growing up is optional.
+  </p>
+
 </header>
 
-<section class="grid">
 
-  <div class="card">
-    <h2>💰 Escape the 9–5</h2>
-    <p>My chaotic journey toward financial freedom.</p>
-  </div>
+<!-- INTRO -->
 
-  <div class="card">
-    <h2>🔧 Break It / Fix It</h2>
-    <p>Cars, tools, and questionable decisions.</p>
-  </div>
+<section class="intro">
 
-  <div class="card">
-    <h2>🧠 How Stuff Works</h2>
-    <p>Engineering thoughts and random curiosity.</p>
-  </div>
+  <div class="intro-inner">
 
-  <div class="card">
-    <h2>🧘 Inner Debugging</h2>
-    <p>Trying to understand life without crashing.</p>
-  </div>
+    <h2>
+      Somewhere between figuring it out
+      and refusing to.
+    </h2>
 
-  <div class="card">
-    <h2>❤️ Co-op Mode</h2>
-    <p>Building a life with my favorite human.</p>
+    <p>
+      This is a place for the things that don't fit neatly anywhere else.
+      The road trips. The broken machines. The good ideas and terrible ones.
+      The questions that don't have easy answers.
+    </p>
+
+    <p>
+      There is a little bit of FIRE in here, too — the desire for freedom,
+      independence, and enough time to actually live. But money is only part
+      of the story.
+    </p>
+
+    <p>
+      Mostly, this is about paying attention. Staying curious.
+      And trying not to lose the parts of ourselves that made being a kid
+      so damn interesting.
+    </p>
+
   </div>
 
 </section>
 
-<section class="section">
-  <h2>🚀 Currently Experimenting With</h2>
-  <p>• Tracking every dollar (FIRE mode)</p>
-  <p>• Fixing things I probably shouldn’t</p>
-  <p>• Learning something new every week</p>
+
+<!-- WRITING -->
+
+<section class="posts" id="writing">
+
+  <div class="section-heading">
+    <h2>Recent writing</h2>
+    <span>Things I've been thinking about</span>
+  </div>
+
+
+  <a href="#" class="post">
+
+    <div class="post-date">
+      Coming soon
+    </div>
+
+    <div>
+      <h3>The Case for Staying a Little Bit Lost</h3>
+      <p>
+        Maybe having everything figured out isn't actually the goal.
+      </p>
+    </div>
+
+  </a>
+
+
+  <a href="#" class="post">
+
+    <div class="post-date">
+      Coming soon
+    </div>
+
+    <div>
+      <h3>What Are We Saving All This Money For?</h3>
+      <p>
+        Financial freedom sounds great. But freedom to do what?
+      </p>
+    </div>
+
+  </a>
+
+
+  <a href="#" class="post">
+
+    <div class="post-date">
+      Coming soon
+    </div>
+
+    <div>
+      <h3>Things Worth Fixing</h3>
+      <p>
+        Machines, relationships, old habits, and the questionable instinct
+        to repair things instead of replacing them.
+      </p>
+    </div>
+
+  </a>
+
+
+  <a href="#" class="post">
+
+    <div class="post-date">
+      Coming soon
+    </div>
+
+    <div>
+      <h3>Take the Long Way Home</h3>
+      <p>
+        Some roads are worth taking simply because they weren't the fastest.
+      </p>
+    </div>
+
+  </a>
+
 </section>
 
-<section class="section">
-  <h2>🔥 Featured Chaos</h2>
-  <p>(Your best posts will go here)</p>
+
+<!-- THEMES -->
+
+<section class="themes">
+
+  <div class="themes-inner">
+
+    <h2>What you'll find here</h2>
+
+    <div class="theme-grid">
+
+      <div class="theme">
+        <h3>Adventures</h3>
+        <p>
+          Places We've been, roads taken, and stories that happened
+          somewhere between here and there.
+        </p>
+      </div>
+
+      <div class="theme">
+        <h3>Making a Life</h3>
+        <p>
+          Money, work, freedom, and the ongoing experiment of figuring out
+          what a good life actually looks like.
+        </p>
+      </div>
+
+      <div class="theme">
+        <h3>Holding On</h3>
+        <p>
+          Curiosity, play, wonder, and the parts of ourselves we shouldn't
+          have to leave behind just because we're getting older.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <h2>
+    I don't want to grow up.<br>
+    I just want to grow.
+  </h2>
+
+  <p>
+    Never Growing Up is a personal blog about interacting with the world,
+    figuring things out, chasing interesting ideas, and occasionally
+    getting gloriously sidetracked.
+  </p>
+
+  <p>
+    No guru stuff. No five-step systems. Just observations, experiments,
+    adventures, and the occasional lesson learned the hard way.
+  </p>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-  <p>Still figuring it out. Probably always will be.</p>
+
+  <p>
+    <strong>Never Growing Up</strong>
+    · Still figuring it out. Probably always will be.
+  </p>
+
 </footer>
 
 </body>
 </html>
+```
