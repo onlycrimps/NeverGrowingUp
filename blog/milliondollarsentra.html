@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>The Million Dollar Sentra — Never Growing Up</title>
+
+<meta
+name="description"
+content="The Million Dollar Sentra — Never Growing Up."
+
+>
+
+  <style>
+
+    /* =====================================================
+       NEVER GROWING UP
+       Individual Blog Post
+       ===================================================== */
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --offwhite: #f3f3f1;
+      --gray: #e3e3e1;
+      --gray-dark: #777777;
+      --blue: #365d87;
+      --pink: #b56b7c;
+    }
+
+
+    /* -------------------------
+       BASE
+       ------------------------- */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      min-width: 0;
+      background: var(--offwhite);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* -------------------------
+       PAGE
+       ------------------------- */
+
+    .page {
+      width: 920px;
+      max-width: calc(100% - 30px);
+      margin: 20px auto 50px;
+    }
+
+
+    /* -------------------------
+       TOP BAR
+       ------------------------- */
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 7px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .top-right {
+      color: var(--gray-dark);
+    }
+
+
+    /* -------------------------
+       PROFILE HEADER
+       ------------------------- */
+
+    .profile-header {
+      background: var(--white);
+      border: 1px solid var(--black);
+      padding: 25px;
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 25px;
+      min-width: 0;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      max-width: 150px;
+      object-fit: cover;
+      object-position: center;
+      background: var(--gray);
+      border: 1px solid var(--black);
+    }
+
+    .profile-info {
+      min-width: 0;
+    }
+
+    .profile-info h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      font-size: 46px;
+      line-height: 1;
+      margin: 0 0 8px;
+      letter-spacing: -2px;
+      overflow-wrap: break-word;
+    }
+
+    .profile-info h1 span {
+      color: var(--pink);
+    }
+
+    .profile-subtitle {
+      font-size: 12px;
+      color: var(--gray-dark);
+      margin-bottom: 18px;
+    }
+
+    .status {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      padding: 4px 8px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+
+    /* -------------------------
+       NAVIGATION
+       ------------------------- */
+
+    nav {
+      margin-top: 10px;
+      background: var(--black);
+      padding: 8px 12px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+
+    /* -------------------------
+       BLOG
+       ------------------------- */
+
+    main {
+      margin-top: 15px;
+      min-width: 0;
+    }
+
+    .box {
+      background: var(--white);
+      border: 1px solid var(--black);
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .box-title {
+      background: var(--gray);
+      border-bottom: 1px solid var(--black);
+      padding: 6px 9px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article {
+      padding: 25px;
+      min-width: 0;
+    }
+
+    .post-date {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-dark);
+    }
+
+    .article h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1.15;
+      margin: 5px 0 20px;
+      overflow-wrap: break-word;
+    }
+
+    .article p {
+      max-width: 720px;
+      margin: 0 0 18px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+
+    /* -------------------------
+       OPTIONAL IMAGES
+       ------------------------- */
+
+    .blog-image {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      background: var(--gray);
+      border: 1px solid var(--black);
+      margin: 25px 0 5px;
+    }
+
+    .caption {
+      font-size: 9px;
+      color: var(--gray-dark);
+      margin-bottom: 20px;
+    }
+
+
+    /* -------------------------
+       BACK LINK
+       ------------------------- */
+
+    .back {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    footer {
+      border-top: 1px solid var(--black);
+      margin-top: 30px;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 9px;
+      color: var(--gray-dark);
+    }
+
+    footer strong {
+      color: var(--black);
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .page {
+        width: calc(100% - 20px);
+        max-width: none;
+        margin: 10px auto 30px;
+      }
+
+      .top-right {
+        display: none;
+      }
+
+      .profile-header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+        max-width: 120px;
+      }
+
+      .profile-info h1 {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+        line-height: 1.05;
+      }
+
+      .profile-subtitle {
+        margin-bottom: 12px;
+      }
+
+      nav {
+        gap: 10px 15px;
+        padding: 8px 10px;
+      }
+
+      nav a {
+        font-size: 9px;
+      }
+
+      .article {
+        padding: 18px;
+      }
+
+      .article h2 {
+        font-size: 29px;
+      }
+
+      .article p {
+        font-size: 13px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+
+    /* -------------------------
+       VERY SMALL PHONES
+       ------------------------- */
+
+    @media (max-width: 400px) {
+
+      .page {
+        width: calc(100% - 14px);
+      }
+
+      .profile-header {
+        padding: 12px;
+      }
+
+      .profile-photo {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+      }
+
+      .profile-info h1 {
+        font-size: 32px;
+      }
+
+      .article {
+        padding: 15px;
+      }
+
+      .article h2 {
+        font-size: 26px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- =================================================
+       TOP
+       ================================================= -->
+
+  <div class="top">
+
+
+<div>
+  never growing up
+</div>
+
+<div class="top-right">
+  welcome to my page
+</div>
+
+
+  </div>
+
+  <!-- =================================================
+       PROFILE HEADER
+       ================================================= -->
+
+  <header class="profile-header">
+
+
+<img
+  src="images/IMG_5390.JPG"
+  alt="Profile photo"
+  class="profile-photo"
+>
+
+<div class="profile-info">
+
+  <h1>
+    Never <span>Growing Up.</span>
+  </h1>
+
+  <div class="profile-subtitle">
+    adventures · machines · life
+  </div>
+
+  <div class="status">
+    ● currently figuring it out
+  </div>
+
+</div>
+
+
+  </header>
+
+  <!-- =================================================
+       NAVIGATION
+       ================================================= -->
+
+  <nav>
+
+
+<a href="index.html">
+  home
+</a>
+
+<a href="blog.html">
+  blog
+</a>
+
+<a href="adventures.html">
+  adventures
+</a>
+
+<a href="about.html">
+  about
+</a>
+
+
+  </nav>
+
+  <!-- =================================================
+       BLOG POST
+       ================================================= -->
+
+  <main>
+
+
+<div class="box">
+
+  <div class="box-title">
+    blog
+  </div>
+
+  <article class="article">
+
+
+    <!-- DATE -->
+
+    <div class="post-date">
+      september 2026
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h2>
+      The Million Dollar Sentra
+    </h2>
+
+
+    <!-- =================================================
+         OPTIONAL IMAGE 01
+
+         Delete the arrows around this section
+         when you want to use the image.
+         ================================================= -->
+
+    <!--
+
+    <img
+      src="images/sentra.jpg"
+      alt="The Million Dollar Sentra"
+      class="blog-image"
+    >
+
+    <div class="caption">
+      the million dollar sentra · 2026
+    </div>
+
+    -->
+
+
+    <!-- =================================================
+         BLOG TEXT
+         ================================================= -->
+
+    <p>
+      I have been meaning to start a blog of my life
+      experiences for a long time.
+    </p>
+
+    <p>
+      There always seemed to be a reason not to. There
+      was something else to do, somewhere else to go,
+      or some better time to start.
+    </p>
+
+    <p>
+      So naturally, I decided to start with a Nissan
+      Sentra.
+    </p>
+
+
+    <!-- =================================================
+         OPTIONAL IMAGE 02
+         ================================================= -->
+
+    <!--
+
+    <img
+      src="images/sentra-02.jpg"
+      alt="Sentra on the road"
+      class="blog-image"
+    >
+
+    <div class="caption">
+      somewhere on the road · 2026
+    </div>
+
+    -->
+
+
+    <p>
+      The funny thing about old cars is that they have
+      a way of becoming more than just cars. They become
+      projects, problems, memories, and eventually
+      stories.
+    </p>
+
+    <p>
+      This one has already managed to become all four.
+    </p>
+
+
+    <!-- =================================================
+         OPTIONAL IMAGE 03
+         ================================================= -->
+
+    <!--
+
+    <img
+      src="images/sentra-03.jpg"
+      alt="Working on the Sentra"
+      class="blog-image"
+    >
+
+    <div class="caption">
+      figuring things out · 2026
+    </div>
+
+    -->
+
+
+    <p>
+      I don't really know where this blog is going yet.
+      That's probably part of the point.
+    </p>
+
+    <p>
+      There are a lot of things I want to write about —
+      cars, trips, mistakes, people, places, and all the
+      little things that seem insignificant until years
+      later when they're the things you remember.
+    </p>
+
+    <p>
+      So here we are.
+    </p>
+
+
+    <!-- BACK TO BLOG -->
+
+    <a href="blog.html" class="back">
+      ← back to blog
+    </a>
+
+  </article>
+
+</div>
+
+
+  </main>
+
+  <!-- =================================================
+       FOOTER
+       ================================================= -->
+
+  <footer>
+
+
+<div>
+  <strong>Never Growing Up</strong>
+  · © 2026
+</div>
+
+<div>
+  made by a human ·
+  :D
+</div>
+
+
+  </footer>
+
+</div>
+
+</body>
+
+</html>
