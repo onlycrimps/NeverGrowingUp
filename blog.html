@@ -1,1 +1,1404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Blog — Never Growing Up</title>
+
+<meta
+name="description"
+content="The blog of Never Growing Up — thoughts on life, adventures, machines, money, fixing things, and figuring it out."
+
+>
+
+  <style>
+
+    /* =====================================================
+       NEVER GROWING UP — BLOG
+       Minimal MySpace / Old Internet Personal Website
+       ===================================================== */
+
+
+    /* -------------------------
+       COLORS
+       ------------------------- */
+
+    :root {
+
+      --black: #111111;
+      --white: #ffffff;
+      --offwhite: #f3f3f1;
+      --gray: #e3e3e1;
+      --gray-dark: #777777;
+      --blue: #365d87;
+      --pink: #b56b7c;
+
+    }
+
+
+    /* -------------------------
+       BASE
+       ------------------------- */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      width: 100%;
+
+      min-width: 0;
+
+      background: var(--offwhite);
+
+      color: var(--black);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+    }
+
+
+    a {
+
+      color: var(--blue);
+
+      text-decoration: none;
+
+    }
+
+
+    a:hover {
+
+      text-decoration: underline;
+
+    }
+
+
+    /* -------------------------
+       PAGE
+       ------------------------- */
+
+    .page {
+
+      width: 920px;
+
+      max-width: calc(100% - 30px);
+
+      margin: 20px auto 50px;
+
+    }
+
+
+    /* -------------------------
+       TOP BAR
+       ------------------------- */
+
+    .top {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      border-bottom: 1px solid var(--black);
+
+      padding-bottom: 7px;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .top-right {
+
+      color: var(--gray-dark);
+
+    }
+
+
+    /* -------------------------
+       HEADER
+       ------------------------- */
+
+    .blog-header {
+
+      background: var(--white);
+
+      border: 1px solid var(--black);
+
+      padding: 30px;
+
+      margin-top: 12px;
+
+    }
+
+
+    .blog-header h1 {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-weight: normal;
+
+      font-size: 52px;
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      margin: 0 0 10px;
+
+    }
+
+
+    .blog-header h1 span {
+
+      color: var(--pink);
+
+    }
+
+
+    .blog-header p {
+
+      max-width: 650px;
+
+      margin: 0;
+
+      color: #444;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 18px;
+
+      line-height: 1.45;
+
+    }
+
+
+    /* -------------------------
+       NAVIGATION
+       ------------------------- */
+
+    nav {
+
+      margin-top: 10px;
+
+      background: var(--black);
+
+      padding: 8px 12px;
+
+      display: flex;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    nav a {
+
+      color: white;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    /* -------------------------
+       LAYOUT
+       ------------------------- */
+
+    .columns {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1fr) 250px;
+
+      gap: 15px;
+
+      margin-top: 15px;
+
+      align-items: start;
+
+      min-width: 0;
+
+    }
+
+
+    .columns > main,
+    .columns > aside {
+
+      min-width: 0;
+
+    }
+
+
+    /* -------------------------
+       BOXES
+       ------------------------- */
+
+    .box {
+
+      background: var(--white);
+
+      border: 1px solid var(--black);
+
+      margin-bottom: 15px;
+
+      min-width: 0;
+
+      overflow: hidden;
+
+    }
+
+
+    .box-title {
+
+      background: var(--gray);
+
+      border-bottom: 1px solid var(--black);
+
+      padding: 6px 9px;
+
+      font-size: 10px;
+
+      font-weight: bold;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .box-content {
+
+      padding: 15px;
+
+      min-width: 0;
+
+    }
+
+
+    /* -------------------------
+       FEATURED POST
+       ------------------------- */
+
+    .featured {
+
+      padding: 22px;
+
+    }
+
+
+    .featured-label {
+
+      font-size: 9px;
+
+      color: var(--pink);
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      font-weight: bold;
+
+    }
+
+
+    .featured h2 {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 32px;
+
+      line-height: 1.15;
+
+      font-weight: normal;
+
+      margin: 6px 0 8px;
+
+    }
+
+
+    .featured h2 a {
+
+      color: var(--black);
+
+    }
+
+
+    .featured h2 a:hover {
+
+      color: var(--pink);
+
+      text-decoration: none;
+
+    }
+
+
+    .featured-date {
+
+      font-size: 9px;
+
+      color: var(--gray-dark);
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .featured p {
+
+      font-size: 13px;
+
+      color: #444;
+
+      margin: 0 0 12px;
+
+      max-width: 650px;
+
+    }
+
+
+    .read-featured {
+
+      display: inline-block;
+
+      background: var(--black);
+
+      color: white;
+
+      padding: 6px 10px;
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .read-featured:hover {
+
+      background: var(--pink);
+
+      text-decoration: none;
+
+    }
+
+
+    /* -------------------------
+       POST LIST
+       ------------------------- */
+
+    .post {
+
+      padding: 20px 0;
+
+      border-bottom: 1px dotted #999;
+
+    }
+
+
+    .post:first-child {
+
+      padding-top: 0;
+
+    }
+
+
+    .post:last-child {
+
+      border-bottom: 0;
+
+      padding-bottom: 0;
+
+    }
+
+
+    .post-date {
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      color: var(--gray-dark);
+
+    }
+
+
+    .post-category {
+
+      color: var(--pink);
+
+    }
+
+
+    .post h2 {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 24px;
+
+      font-weight: normal;
+
+      line-height: 1.2;
+
+      margin: 4px 0 6px;
+
+      overflow-wrap: break-word;
+
+    }
+
+
+    .post h2 a {
+
+      color: var(--black);
+
+    }
+
+
+    .post h2 a:hover {
+
+      color: var(--blue);
+
+    }
+
+
+    .post p {
+
+      color: #444;
+
+      margin: 0;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+
+    }
+
+
+    .read {
+
+      display: inline-block;
+
+      margin-top: 8px;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* -------------------------
+       SIDEBAR
+       ------------------------- */
+
+    .about-blog {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 16px;
+
+      line-height: 1.4;
+
+      margin: 0;
+
+    }
+
+
+    .tiny {
+
+      font-size: 10px;
+
+      color: var(--gray-dark);
+
+    }
+
+
+    /* -------------------------
+       CATEGORIES
+       ------------------------- */
+
+    .categories {
+
+      list-style: none;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+    .categories li {
+
+      border-bottom: 1px dotted #bbb;
+
+      padding: 6px 0;
+
+      font-size: 11px;
+
+    }
+
+
+    .categories li:last-child {
+
+      border-bottom: 0;
+
+    }
+
+
+    .categories a {
+
+      display: flex;
+
+      justify-content: space-between;
+
+    }
+
+
+    .count {
+
+      color: var(--gray-dark);
+
+    }
+
+
+    /* -------------------------
+       ARCHIVE
+       ------------------------- */
+
+    .archive {
+
+      list-style: none;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+    .archive li {
+
+      padding: 5px 0;
+
+      font-size: 11px;
+
+    }
+
+
+    /* -------------------------
+       QUOTE
+       ------------------------- */
+
+    .quote {
+
+      background: var(--black);
+
+      color: white;
+
+      padding: 20px;
+
+      margin-top: 15px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 18px;
+
+      line-height: 1.35;
+
+      text-align: center;
+
+    }
+
+
+    .quote small {
+
+      display: block;
+
+      margin-top: 8px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 9px;
+
+      color: #aaa;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    footer {
+
+      border-top: 1px solid var(--black);
+
+      margin-top: 30px;
+
+      padding-top: 10px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 9px;
+
+      color: var(--gray-dark);
+
+    }
+
+
+    footer strong {
+
+      color: var(--black);
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+
+      .page {
+
+        width: calc(100% - 20px);
+
+        max-width: none;
+
+        margin: 10px auto 30px;
+
+      }
+
+
+      .top-right {
+
+        display: none;
+
+      }
+
+
+      .blog-header {
+
+        padding: 20px 15px;
+
+      }
+
+
+      .blog-header h1 {
+
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+
+      }
+
+
+      .blog-header p {
+
+        font-size: 16px;
+
+      }
+
+
+      nav {
+
+        gap: 10px 15px;
+
+        padding: 8px 10px;
+
+      }
+
+
+      nav a {
+
+        font-size: 9px;
+
+      }
+
+
+      .columns {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+      }
+
+
+      .featured {
+
+        padding: 17px;
+
+      }
+
+
+      .featured h2 {
+
+        font-size: 27px;
+
+      }
+
+
+      .box-content {
+
+        padding: 12px;
+
+      }
+
+
+      .post h2 {
+
+        font-size: 21px;
+
+      }
+
+
+      .quote {
+
+        font-size: 17px;
+
+        padding: 18px 14px;
+
+      }
+
+
+      footer {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 400px) {
+
+
+      .page {
+
+        width: calc(100% - 14px);
+
+      }
+
+
+      .blog-header {
+
+        padding: 16px 12px;
+
+      }
+
+
+      .blog-header h1 {
+
+        font-size: 34px;
+
+      }
+
+
+      .blog-header p {
+
+        font-size: 15px;
+
+      }
+
+
+      .featured h2 {
+
+        font-size: 24px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- =================================================
+       TOP
+       ================================================= -->
+
+  <div class="top">
+
+```
+<div>
+  never growing up
+</div>
+
+<div class="top-right">
+  the blog
+</div>
+```
+
+  </div>
+
+  <!-- =================================================
+       BLOG HEADER
+       ================================================= -->
+
+  <header class="blog-header">
+
+```
+<h1>
+  The <span>Blog.</span>
+</h1>
+
+<p>
+  Thoughts, stories, questionable decisions,
+  machines, adventures, money, and whatever else
+  happens to be on my mind.
+</p>
+```
+
+  </header>
+
+  <!-- =================================================
+       NAVIGATION
+       ================================================= -->
+
+  <nav>
+
+```
+<a href="index.html">
+  home
+</a>
+
+<a href="blog.html">
+  blog
+</a>
+
+<a href="adventures.html">
+  adventures
+</a>
+
+<a href="about.html">
+  about
+</a>
+```
+
+  </nav>
+
+  <!-- =================================================
+       CONTENT
+       ================================================= -->
+
+  <div class="columns">
+
+```
+<!-- =================================================
+     MAIN
+     ================================================= -->
+
+<main>
+
+
+  <!-- FEATURED -->
+
+  <div class="box">
+
+    <div class="box-title">
+      featured post
+    </div>
+
+    <div class="featured">
+
+      <div class="featured-label">
+        latest thinking
+      </div>
+
+      <h2>
+        <a href="blog/lost.html">
+          The Case for Staying a Little Bit Lost
+        </a>
+      </h2>
+
+      <div class="featured-date">
+        September 2026 · Life
+      </div>
+
+      <p>
+        Maybe having everything figured out isn't
+        actually the goal. Maybe there is something
+        valuable about wandering around without a
+        perfectly mapped-out destination.
+      </p>
+
+      <a
+        href="blog/lost.html"
+        class="read-featured"
+      >
+        read the post →
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- ALL POSTS -->
+
+  <div class="box">
+
+    <div class="box-title">
+      all posts
+    </div>
+
+    <div class="box-content">
+
+
+      <!-- POST 01 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          september 2026
+          ·
+          <span class="post-category">
+            life
+          </span>
+        </div>
+
+        <h2>
+          <a href="blog/lost.html">
+            The Case for Staying a Little Bit Lost
+          </a>
+        </h2>
+
+        <p>
+          Maybe having everything figured out isn't
+          actually the goal. There is something to be
+          said for leaving a little room for uncertainty,
+          mistakes, detours, and accidental discoveries.
+        </p>
+
+        <a
+          href="blog/lost.html"
+          class="read"
+        >
+          read more →
+        </a>
+
+      </article>
+
+
+      <!-- POST 02 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          august 2026
+          ·
+          <span class="post-category">
+            money
+          </span>
+        </div>
+
+        <h2>
+          <a href="blog/money.html">
+            What Are We Saving All This Money For?
+          </a>
+        </h2>
+
+        <p>
+          Financial independence sounds great.
+          But independence to do what? A thought
+          about saving, spending, experiences,
+          and remembering why we're working in
+          the first place.
+        </p>
+
+        <a
+          href="blog/money.html"
+          class="read"
+        >
+          read more →
+        </a>
+
+      </article>
+
+
+      <!-- POST 03 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          august 2026
+          ·
+          <span class="post-category">
+            machines
+          </span>
+        </div>
+
+        <h2>
+          <a href="blog/fixing-things.html">
+            Things Worth Fixing
+          </a>
+        </h2>
+
+        <p>
+          Machines, relationships, old habits,
+          and the strange instinct to repair things
+          instead of immediately replacing them.
+        </p>
+
+        <a
+          href="blog/fixing-things.html"
+          class="read"
+        >
+          read more →
+        </a>
+
+      </article>
+
+
+      <!-- POST 04 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          july 2026
+          ·
+          <span class="post-category">
+            adventures
+          </span>
+        </div>
+
+        <h2>
+          <a href="blog/taking-the-long-way.html">
+            Taking the Long Way
+          </a>
+        </h2>
+
+        <p>
+          Sometimes the fastest route isn't the
+          best route. A few thoughts on road trips,
+          getting lost, and why the scenic route
+          usually wins.
+        </p>
+
+        <a
+          href="blog/taking-the-long-way.html"
+          class="read"
+        >
+          read more →
+        </a>
+
+      </article>
+
+
+      <!-- POST 05 -->
+
+      <article class="post">
+
+        <div class="post-date">
+          july 2026
+          ·
+          <span class="post-category">
+            life
+          </span>
+        </div>
+
+        <h2>
+          <a href="blog/being-busy.html">
+            I'm Starting to Think Being Busy Is Overrated
+          </a>
+        </h2>
+
+        <p>
+          Somewhere along the way, being busy became
+          something to be proud of. I'm not convinced
+          it should be.
+        </p>
+
+        <a
+          href="blog/being-busy.html"
+          class="read"
+        >
+          read more →
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- QUOTE -->
+
+  <div class="quote">
+
+    "The best stories usually start
+    with a bad idea."
+
+    <small>
+      — probably
+    </small>
+
+  </div>
+
+
+</main>
+
+
+<!-- =================================================
+     SIDEBAR
+     ================================================= -->
+
+<aside>
+
+
+  <!-- ABOUT THE BLOG -->
+
+  <div class="box">
+
+    <div class="box-title">
+      about the blog
+    </div>
+
+    <div class="box-content">
+
+      <p class="about-blog">
+
+        I write things down so I
+        don't forget what I was
+        thinking.
+
+      </p>
+
+      <p class="tiny">
+
+        No algorithm.
+        No content strategy.
+        Just words on a website.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- CATEGORIES -->
+
+  <div class="box">
+
+    <div class="box-title">
+      categories
+    </div>
+
+    <div class="box-content">
+
+      <ul class="categories">
+
+        <li>
+          <a href="category/life.html">
+            <span>life</span>
+            <span class="count">02</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="category/adventures.html">
+            <span>adventures</span>
+            <span class="count">01</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="category/machines.html">
+            <span>machines</span>
+            <span class="count">01</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="category/money.html">
+            <span>money</span>
+            <span class="count">01</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- ARCHIVE -->
+
+  <div class="box">
+
+    <div class="box-title">
+      archive
+    </div>
+
+    <div class="box-content">
+
+      <ul class="archive">
+
+        <li>
+          <a href="archive/september-2026.html">
+            september 2026
+          </a>
+        </li>
+
+        <li>
+          <a href="archive/august-2026.html">
+            august 2026
+          </a>
+        </li>
+
+        <li>
+          <a href="archive/july-2026.html">
+            july 2026
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- BACK HOME -->
+
+  <div class="box">
+
+    <div class="box-title">
+      elsewhere
+    </div>
+
+    <div class="box-content">
+
+      <a href="index.html">
+        ← back to the homepage
+      </a>
+
+    </div>
+
+  </div>
+
+
+</aside>
+```
+
+  </div>
+
+  <!-- =================================================
+       FOOTER
+       ================================================= -->
+
+  <footer>
+
+```
+<div>
+
+  <strong>Never Growing Up</strong>
+
+  · © 2026
+
+</div>
+
+<div>
+
+  made by a human ·
+  not a corporation
+
+</div>
+```
+
+  </footer>
+
+</div>
+
+</body>
+
+</html>
 
