@@ -16,7 +16,7 @@ content="width=device-width, initial-scale=1.0"
 
 <meta
 name="description"
-content="The blog of Never Growing Up — thoughts on life, adventures, machines, money, fixing things, and figuring it out."
+content="Never Growing Up — thoughts, adventures, machines, and figuring it out."
 
 >
 
@@ -24,13 +24,7 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
     /* =====================================================
        NEVER GROWING UP — BLOG
-       Minimal MySpace / Old Internet Personal Website
        ===================================================== */
-
-
-    /* -------------------------
-       COLORS
-       ------------------------- */
 
     :root {
 
@@ -55,8 +49,11 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
 
     html {
+
       width: 100%;
+
       overflow-x: hidden;
+
     }
 
 
@@ -146,23 +143,66 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
 
     /* -------------------------
-       HEADER
+       PROFILE HEADER
+       Same style as homepage
        ------------------------- */
 
-    .blog-header {
+    .profile-header {
 
       background: var(--white);
 
       border: 1px solid var(--black);
 
-      padding: 30px;
+      padding: 25px;
 
       margin-top: 12px;
+
+      display: grid;
+
+      grid-template-columns: 150px minmax(0, 1fr);
+
+      gap: 25px;
+
+      min-width: 0;
 
     }
 
 
-    .blog-header h1 {
+    /* -------------------------
+       PROFILE IMAGE
+       ------------------------- */
+
+    .profile-photo {
+
+      width: 150px;
+
+      height: 150px;
+
+      max-width: 150px;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      background: var(--gray);
+
+      border: 1px solid var(--black);
+
+    }
+
+
+    /* -------------------------
+       PROFILE INFO
+       ------------------------- */
+
+    .profile-info {
+
+      min-width: 0;
+
+    }
+
+
+    .profile-info h1 {
 
       font-family:
         Georgia,
@@ -171,40 +211,52 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
       font-weight: normal;
 
-      font-size: 52px;
+      font-size: 46px;
 
       line-height: 1;
 
+      margin: 0 0 8px;
+
       letter-spacing: -2px;
 
-      margin: 0 0 10px;
+      overflow-wrap: break-word;
 
     }
 
 
-    .blog-header h1 span {
+    .profile-info h1 span {
 
       color: var(--pink);
 
     }
 
 
-    .blog-header p {
+    .profile-subtitle {
 
-      max-width: 650px;
+      font-size: 12px;
 
-      margin: 0;
+      color: var(--gray-dark);
 
-      color: #444;
+      margin-bottom: 18px;
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    }
 
-      font-size: 18px;
 
-      line-height: 1.45;
+    .status {
+
+      display: inline-block;
+
+      background: var(--black);
+
+      color: white;
+
+      padding: 4px 8px;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.7px;
 
     }
 
@@ -243,205 +295,79 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
     }
 
 
-    /* -------------------------
-       LAYOUT
-       ------------------------- */
+    /* =====================================================
+       BLOG HEADER
+       ===================================================== */
 
-    .columns {
-
-      display: grid;
-
-      grid-template-columns: minmax(0, 1fr) 250px;
-
-      gap: 15px;
-
-      margin-top: 15px;
-
-      align-items: start;
-
-      min-width: 0;
-
-    }
-
-
-    .columns > main,
-    .columns > aside {
-
-      min-width: 0;
-
-    }
-
-
-    /* -------------------------
-       BOXES
-       ------------------------- */
-
-    .box {
+    .blog-heading {
 
       background: var(--white);
 
       border: 1px solid var(--black);
 
-      margin-bottom: 15px;
-
-      min-width: 0;
-
-      overflow: hidden;
-
-    }
-
-
-    .box-title {
-
-      background: var(--gray);
-
-      border-bottom: 1px solid var(--black);
-
-      padding: 6px 9px;
-
-      font-size: 10px;
-
-      font-weight: bold;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-
-    }
-
-
-    .box-content {
+      margin-top: 15px;
 
       padding: 15px;
 
-      min-width: 0;
-
     }
 
 
-    /* -------------------------
-       FEATURED POST
-       ------------------------- */
-
-    .featured {
-
-      padding: 22px;
-
-    }
-
-
-    .featured-label {
-
-      font-size: 9px;
-
-      color: var(--pink);
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.5px;
-
-      font-weight: bold;
-
-    }
-
-
-    .featured h2 {
+    .blog-heading h2 {
 
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-size: 32px;
-
-      line-height: 1.15;
+      font-size: 30px;
 
       font-weight: normal;
 
-      margin: 6px 0 8px;
+      line-height: 1.1;
+
+      margin: 0 0 5px;
 
     }
 
 
-    .featured h2 a {
-
-      color: var(--black);
-
-    }
-
-
-    .featured h2 a:hover {
+    .blog-heading h2 span {
 
       color: var(--pink);
 
-      text-decoration: none;
-
     }
 
 
-    .featured-date {
+    .blog-heading p {
 
-      font-size: 9px;
+      margin: 0;
 
       color: var(--gray-dark);
 
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-
-      margin-bottom: 12px;
+      font-size: 11px;
 
     }
 
 
-    .featured p {
+    /* =====================================================
+       BLOG POSTS
+       ===================================================== */
 
-      font-size: 13px;
+    .posts {
 
-      color: #444;
+      background: var(--white);
 
-      margin: 0 0 12px;
+      border: 1px solid var(--black);
 
-      max-width: 650px;
+      margin-top: 15px;
 
-    }
-
-
-    .read-featured {
-
-      display: inline-block;
-
-      background: var(--black);
-
-      color: white;
-
-      padding: 6px 10px;
-
-      font-size: 9px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
+      padding: 0 18px;
 
     }
 
-
-    .read-featured:hover {
-
-      background: var(--pink);
-
-      text-decoration: none;
-
-    }
-
-
-    /* -------------------------
-       POST LIST
-       ------------------------- */
 
     .post {
 
-      padding: 20px 0;
+      padding: 22px 0;
 
       border-bottom: 1px dotted #999;
 
@@ -450,7 +376,7 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
     .post:first-child {
 
-      padding-top: 0;
+      padding-top: 20px;
 
     }
 
@@ -459,10 +385,12 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
       border-bottom: 0;
 
-      padding-bottom: 0;
-
     }
 
+
+    /* -------------------------
+       POST DATE
+       ------------------------- */
 
     .post-date {
 
@@ -477,12 +405,9 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
     }
 
 
-    .post-category {
-
-      color: var(--pink);
-
-    }
-
+    /* -------------------------
+       POST TITLE
+       ------------------------- */
 
     .post h2 {
 
@@ -491,13 +416,13 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
         "Times New Roman",
         serif;
 
-      font-size: 24px;
+      font-size: 25px;
 
       font-weight: normal;
 
       line-height: 1.2;
 
-      margin: 4px 0 6px;
+      margin: 4px 0 7px;
 
       overflow-wrap: break-word;
 
@@ -513,23 +438,35 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 
     .post h2 a:hover {
 
-      color: var(--blue);
+      color: var(--pink);
+
+      text-decoration: none;
 
     }
 
 
-    .post p {
+    /* -------------------------
+       POST PREVIEW
+       ------------------------- */
+
+    .post-preview {
 
       color: #444;
-
-      margin: 0;
 
       font-size: 12px;
 
       line-height: 1.6;
 
+      margin: 0;
+
+      max-width: 700px;
+
     }
 
+
+    /* -------------------------
+       READ MORE
+       ------------------------- */
 
     .read {
 
@@ -540,155 +477,6 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
       font-size: 10px;
 
       text-transform: uppercase;
-
-    }
-
-
-    /* -------------------------
-       SIDEBAR
-       ------------------------- */
-
-    .about-blog {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 16px;
-
-      line-height: 1.4;
-
-      margin: 0;
-
-    }
-
-
-    .tiny {
-
-      font-size: 10px;
-
-      color: var(--gray-dark);
-
-    }
-
-
-    /* -------------------------
-       CATEGORIES
-       ------------------------- */
-
-    .categories {
-
-      list-style: none;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
-
-
-    .categories li {
-
-      border-bottom: 1px dotted #bbb;
-
-      padding: 6px 0;
-
-      font-size: 11px;
-
-    }
-
-
-    .categories li:last-child {
-
-      border-bottom: 0;
-
-    }
-
-
-    .categories a {
-
-      display: flex;
-
-      justify-content: space-between;
-
-    }
-
-
-    .count {
-
-      color: var(--gray-dark);
-
-    }
-
-
-    /* -------------------------
-       ARCHIVE
-       ------------------------- */
-
-    .archive {
-
-      list-style: none;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
-
-
-    .archive li {
-
-      padding: 5px 0;
-
-      font-size: 11px;
-
-    }
-
-
-    /* -------------------------
-       QUOTE
-       ------------------------- */
-
-    .quote {
-
-      background: var(--black);
-
-      color: white;
-
-      padding: 20px;
-
-      margin-top: 15px;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 18px;
-
-      line-height: 1.35;
-
-      text-align: center;
-
-    }
-
-
-    .quote small {
-
-      display: block;
-
-      margin-top: 8px;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 9px;
-
-      color: #aaa;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
 
     }
 
@@ -750,28 +538,49 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
       }
 
 
-      .blog-header {
+      /* PROFILE */
 
-        padding: 20px 15px;
+      .profile-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 15px;
 
       }
 
 
-      .blog-header h1 {
+      .profile-photo {
 
-        font-size: 40px;
+        width: 120px;
+
+        height: 120px;
+
+        max-width: 120px;
+
+      }
+
+
+      .profile-info h1 {
+
+        font-size: 38px;
 
         letter-spacing: -1.5px;
 
-      }
-
-
-      .blog-header p {
-
-        font-size: 16px;
+        line-height: 1.05;
 
       }
 
+
+      .profile-subtitle {
+
+        margin-bottom: 12px;
+
+      }
+
+
+      /* NAV */
 
       nav {
 
@@ -789,32 +598,32 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
       }
 
 
-      .columns {
+      /* BLOG */
 
-        grid-template-columns: 1fr;
+      .blog-heading {
 
-        gap: 0;
-
-      }
-
-
-      .featured {
-
-        padding: 17px;
+        padding: 13px;
 
       }
 
 
-      .featured h2 {
+      .blog-heading h2 {
 
-        font-size: 27px;
+        font-size: 26px;
 
       }
 
 
-      .box-content {
+      .posts {
 
-        padding: 12px;
+        padding: 0 13px;
+
+      }
+
+
+      .post {
+
+        padding: 18px 0;
 
       }
 
@@ -826,14 +635,7 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
       }
 
 
-      .quote {
-
-        font-size: 17px;
-
-        padding: 18px 14px;
-
-      }
-
+      /* FOOTER */
 
       footer {
 
@@ -860,30 +662,41 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
       }
 
 
-      .blog-header {
+      .profile-header {
 
-        padding: 16px 12px;
-
-      }
-
-
-      .blog-header h1 {
-
-        font-size: 34px;
+        padding: 12px;
 
       }
 
 
-      .blog-header p {
+      .profile-photo {
 
-        font-size: 15px;
+        width: 100px;
+
+        height: 100px;
+
+        max-width: 100px;
 
       }
 
 
-      .featured h2 {
+      .profile-info h1 {
 
-        font-size: 24px;
+        font-size: 32px;
+
+      }
+
+
+      .blog-heading h2 {
+
+        font-size: 23px;
+
+      }
+
+
+      .post h2 {
+
+        font-size: 20px;
 
       }
 
@@ -909,28 +722,46 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 </div>
 
 <div class="top-right">
-  the blog
+  welcome to my page
 </div>
 ```
 
   </div>
 
   <!-- =================================================
-       BLOG HEADER
+       PROFILE HEADER
+       Same as homepage
        ================================================= -->
 
-  <header class="blog-header">
+  <header class="profile-header">
 
 ```
-<h1>
-  The <span>Blog.</span>
-</h1>
+<img
+  src="images/IMG_5390.JPG"
+  alt="Profile photo"
+  class="profile-photo"
+>
 
-<p>
-  Thoughts, stories, questionable decisions,
-  machines, adventures, money, and whatever else
-  happens to be on my mind.
-</p>
+
+<div class="profile-info">
+
+  <h1>
+    Never <span>Growing Up.</span>
+  </h1>
+
+  <div class="profile-subtitle">
+
+    adventures · machines · life
+
+  </div>
+
+  <div class="status">
+
+    ● currently figuring it out
+
+  </div>
+
+</div>
 ```
 
   </header>
@@ -962,414 +793,256 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
   </nav>
 
   <!-- =================================================
-       CONTENT
+       BLOG INTRO
        ================================================= -->
 
-  <div class="columns">
+  <section class="blog-heading">
+
+```
+<h2>
+  The <span>Blog.</span>
+</h2>
+
+<p>
+  Thoughts, stories, mistakes, adventures,
+  and whatever else happens to be on my mind.
+</p>
+```
+
+  </section>
+
+  <!-- =================================================
+       BLOG POSTS
+       ================================================= -->
+
+  <main class="posts">
 
 ```
 <!-- =================================================
-     MAIN
+     NEWEST POST
      ================================================= -->
 
-<main>
+<article class="post">
 
-
-  <!-- FEATURED -->
-
-  <div class="box">
-
-    <div class="box-title">
-      featured post
-    </div>
-
-    <div class="featured">
-
-      <div class="featured-label">
-        latest thinking
-      </div>
-
-      <h2>
-        <a href="blog/lost.html">
-          The Case for Staying a Little Bit Lost
-        </a>
-      </h2>
-
-      <div class="featured-date">
-        September 2026 · Life
-      </div>
-
-      <p>
-        Maybe having everything figured out isn't
-        actually the goal. Maybe there is something
-        valuable about wandering around without a
-        perfectly mapped-out destination.
-      </p>
-
-      <a
-        href="blog/lost.html"
-        class="read-featured"
-      >
-        read the post →
-      </a>
-
-    </div>
-
+  <div class="post-date">
+    september 2026
   </div>
 
+  <h2>
 
-  <!-- ALL POSTS -->
+    <a href="blog/lost.html">
+      The Case for Staying a Little Bit Lost
+    </a>
 
-  <div class="box">
+  </h2>
 
-    <div class="box-title">
-      all posts
-    </div>
+  <p class="post-preview">
 
-    <div class="box-content">
+    Maybe having everything figured out isn't
+    actually the goal. There is something to be
+    said for leaving a little room for uncertainty,
+    mistakes, detours, and accidental discoveries.
 
+  </p>
 
-      <!-- POST 01 -->
+  <a
+    href="blog/lost.html"
+    class="read"
+  >
+    read more →
+  </a>
 
-      <article class="post">
-
-        <div class="post-date">
-          september 2026
-          ·
-          <span class="post-category">
-            life
-          </span>
-        </div>
-
-        <h2>
-          <a href="blog/lost.html">
-            The Case for Staying a Little Bit Lost
-          </a>
-        </h2>
-
-        <p>
-          Maybe having everything figured out isn't
-          actually the goal. There is something to be
-          said for leaving a little room for uncertainty,
-          mistakes, detours, and accidental discoveries.
-        </p>
-
-        <a
-          href="blog/lost.html"
-          class="read"
-        >
-          read more →
-        </a>
-
-      </article>
-
-
-      <!-- POST 02 -->
-
-      <article class="post">
-
-        <div class="post-date">
-          august 2026
-          ·
-          <span class="post-category">
-            money
-          </span>
-        </div>
-
-        <h2>
-          <a href="blog/money.html">
-            What Are We Saving All This Money For?
-          </a>
-        </h2>
-
-        <p>
-          Financial independence sounds great.
-          But independence to do what? A thought
-          about saving, spending, experiences,
-          and remembering why we're working in
-          the first place.
-        </p>
-
-        <a
-          href="blog/money.html"
-          class="read"
-        >
-          read more →
-        </a>
-
-      </article>
-
-
-      <!-- POST 03 -->
-
-      <article class="post">
-
-        <div class="post-date">
-          august 2026
-          ·
-          <span class="post-category">
-            machines
-          </span>
-        </div>
-
-        <h2>
-          <a href="blog/fixing-things.html">
-            Things Worth Fixing
-          </a>
-        </h2>
-
-        <p>
-          Machines, relationships, old habits,
-          and the strange instinct to repair things
-          instead of immediately replacing them.
-        </p>
-
-        <a
-          href="blog/fixing-things.html"
-          class="read"
-        >
-          read more →
-        </a>
-
-      </article>
-
-
-      <!-- POST 04 -->
-
-      <article class="post">
-
-        <div class="post-date">
-          july 2026
-          ·
-          <span class="post-category">
-            adventures
-          </span>
-        </div>
-
-        <h2>
-          <a href="blog/taking-the-long-way.html">
-            Taking the Long Way
-          </a>
-        </h2>
-
-        <p>
-          Sometimes the fastest route isn't the
-          best route. A few thoughts on road trips,
-          getting lost, and why the scenic route
-          usually wins.
-        </p>
-
-        <a
-          href="blog/taking-the-long-way.html"
-          class="read"
-        >
-          read more →
-        </a>
-
-      </article>
-
-
-      <!-- POST 05 -->
-
-      <article class="post">
-
-        <div class="post-date">
-          july 2026
-          ·
-          <span class="post-category">
-            life
-          </span>
-        </div>
-
-        <h2>
-          <a href="blog/being-busy.html">
-            I'm Starting to Think Being Busy Is Overrated
-          </a>
-        </h2>
-
-        <p>
-          Somewhere along the way, being busy became
-          something to be proud of. I'm not convinced
-          it should be.
-        </p>
-
-        <a
-          href="blog/being-busy.html"
-          class="read"
-        >
-          read more →
-        </a>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-
-  <!-- QUOTE -->
-
-  <div class="quote">
-
-    "The best stories usually start
-    with a bad idea."
-
-    <small>
-      — probably
-    </small>
-
-  </div>
-
-
-</main>
+</article>
 
 
 <!-- =================================================
-     SIDEBAR
+     POST
      ================================================= -->
 
-<aside>
+<article class="post">
 
-
-  <!-- ABOUT THE BLOG -->
-
-  <div class="box">
-
-    <div class="box-title">
-      about the blog
-    </div>
-
-    <div class="box-content">
-
-      <p class="about-blog">
-
-        I write things down so I
-        don't forget what I was
-        thinking.
-
-      </p>
-
-      <p class="tiny">
-
-        No algorithm.
-        No content strategy.
-        Just words on a website.
-
-      </p>
-
-    </div>
-
+  <div class="post-date">
+    august 2026
   </div>
 
+  <h2>
 
-  <!-- CATEGORIES -->
+    <a href="blog/money.html">
+      What Are We Saving All This Money For?
+    </a>
 
-  <div class="box">
+  </h2>
 
-    <div class="box-title">
-      categories
-    </div>
+  <p class="post-preview">
 
-    <div class="box-content">
+    Financial independence sounds great.
+    But independence to do what? A thought
+    about saving, spending, experiences,
+    and remembering why we're working in
+    the first place.
 
-      <ul class="categories">
+  </p>
 
-        <li>
-          <a href="category/life.html">
-            <span>life</span>
-            <span class="count">02</span>
-          </a>
-        </li>
+  <a
+    href="blog/money.html"
+    class="read"
+  >
+    read more →
+  </a>
 
-        <li>
-          <a href="category/adventures.html">
-            <span>adventures</span>
-            <span class="count">01</span>
-          </a>
-        </li>
+</article>
 
-        <li>
-          <a href="category/machines.html">
-            <span>machines</span>
-            <span class="count">01</span>
-          </a>
-        </li>
 
-        <li>
-          <a href="category/money.html">
-            <span>money</span>
-            <span class="count">01</span>
-          </a>
-        </li>
+<!-- =================================================
+     POST
+     ================================================= -->
 
-      </ul>
+<article class="post">
 
-    </div>
-
+  <div class="post-date">
+    august 2026
   </div>
 
+  <h2>
 
-  <!-- ARCHIVE -->
+    <a href="blog/fixing-things.html">
+      Things Worth Fixing
+    </a>
 
-  <div class="box">
+  </h2>
 
-    <div class="box-title">
-      archive
-    </div>
+  <p class="post-preview">
 
-    <div class="box-content">
+    Machines, relationships, old habits,
+    and the strange instinct to repair things
+    instead of immediately replacing them.
 
-      <ul class="archive">
+  </p>
 
-        <li>
-          <a href="archive/september-2026.html">
-            september 2026
-          </a>
-        </li>
+  <a
+    href="blog/fixing-things.html"
+    class="read"
+  >
+    read more →
+  </a>
 
-        <li>
-          <a href="archive/august-2026.html">
-            august 2026
-          </a>
-        </li>
+</article>
 
-        <li>
-          <a href="archive/july-2026.html">
-            july 2026
-          </a>
-        </li>
 
-      </ul>
+<!-- =================================================
+     POST
+     ================================================= -->
 
-    </div>
+<article class="post">
 
+  <div class="post-date">
+    july 2026
   </div>
 
+  <h2>
 
-  <!-- BACK HOME -->
+    <a href="blog/taking-the-long-way.html">
+      Taking the Long Way
+    </a>
 
-  <div class="box">
+  </h2>
 
-    <div class="box-title">
-      elsewhere
-    </div>
+  <p class="post-preview">
 
-    <div class="box-content">
+    Sometimes the fastest route isn't the
+    best route. A few thoughts on road trips,
+    getting lost, and why the scenic route
+    usually wins.
 
-      <a href="index.html">
-        ← back to the homepage
-      </a>
+  </p>
 
-    </div>
+  <a
+    href="blog/taking-the-long-way.html"
+    class="read"
+  >
+    read more →
+  </a>
 
+</article>
+
+
+<!-- =================================================
+     POST
+     ================================================= -->
+
+<article class="post">
+
+  <div class="post-date">
+    july 2026
   </div>
 
+  <h2>
 
-</aside>
+    <a href="blog/being-busy.html">
+      I'm Starting to Think Being Busy Is Overrated
+    </a>
+
+  </h2>
+
+  <p class="post-preview">
+
+    Somewhere along the way, being busy became
+    something to be proud of. I'm not convinced
+    it should be.
+
+  </p>
+
+  <a
+    href="blog/being-busy.html"
+    class="read"
+  >
+    read more →
+  </a>
+
+</article>
+
+
+<!-- =================================================
+     TO ADD A NEW POST:
+
+     1. Copy one of the <article> blocks above.
+     2. Paste it at the TOP of the list.
+     3. Change the date.
+     4. Change the title.
+     5. Change the preview.
+     6. Change both links to your new article.
+
+     Example:
+
+     <article class="post">
+
+       <div class="post-date">
+         october 2026
+       </div>
+
+       <h2>
+         <a href="blog/my-new-post.html">
+           My New Post
+         </a>
+       </h2>
+
+       <p class="post-preview">
+         A short preview of what the article is about...
+       </p>
+
+       <a
+         href="blog/my-new-post.html"
+         class="read"
+       >
+         read more →
+       </a>
+
+     </article>
+
+     ================================================= -->
 ```
 
-  </div>
+  </main>
 
   <!-- =================================================
        FOOTER
@@ -1389,8 +1062,7 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 <div>
 
   made by a human ·
-  not a corporation
-
+  :D
 </div>
 ```
 
@@ -1401,4 +1073,3 @@ content="The blog of Never Growing Up — thoughts on life, adventures, machines
 </body>
 
 </html>
-
