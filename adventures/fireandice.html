@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Land of Fire and Ice — Never Growing Up</title>
+
+<meta
+name="description"
+content="A trip report from Iceland — Never Growing Up."
+
+>
+
+  <style>
+
+    /* =====================================================
+       NEVER GROWING UP
+       Individual Adventure / Trip Report
+       ===================================================== */
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --offwhite: #f3f3f1;
+      --gray: #e3e3e1;
+      --gray-dark: #777777;
+      --blue: #365d87;
+      --pink: #b56b7c;
+    }
+
+
+    /* -------------------------
+       BASE
+       ------------------------- */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      min-width: 0;
+      background: var(--offwhite);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* -------------------------
+       PAGE
+       ------------------------- */
+
+    .page {
+      width: 920px;
+      max-width: calc(100% - 30px);
+      margin: 20px auto 50px;
+    }
+
+
+    /* -------------------------
+       TOP BAR
+       ------------------------- */
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 7px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .top-right {
+      color: var(--gray-dark);
+    }
+
+
+    /* -------------------------
+       PROFILE HEADER
+       ------------------------- */
+
+    .profile-header {
+      background: var(--white);
+      border: 1px solid var(--black);
+      padding: 25px;
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 25px;
+      min-width: 0;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      max-width: 150px;
+      object-fit: cover;
+      object-position: center;
+      background: var(--gray);
+      border: 1px solid var(--black);
+    }
+
+    .profile-info {
+      min-width: 0;
+    }
+
+    .profile-info h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      font-size: 46px;
+      line-height: 1;
+      margin: 0 0 8px;
+      letter-spacing: -2px;
+      overflow-wrap: break-word;
+    }
+
+    .profile-info h1 span {
+      color: var(--pink);
+    }
+
+    .profile-subtitle {
+      font-size: 12px;
+      color: var(--gray-dark);
+      margin-bottom: 18px;
+    }
+
+    .status {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      padding: 4px 8px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+
+    /* -------------------------
+       NAVIGATION
+       ------------------------- */
+
+    nav {
+      margin-top: 10px;
+      background: var(--black);
+      padding: 8px 12px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+
+    /* -------------------------
+       MAIN CONTENT
+       ------------------------- */
+
+    main {
+      margin-top: 15px;
+      min-width: 0;
+    }
+
+    .box {
+      background: var(--white);
+      border: 1px solid var(--black);
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .box-title {
+      background: var(--gray);
+      border-bottom: 1px solid var(--black);
+      padding: 6px 9px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+
+    /* -------------------------
+       TRIP REPORT
+       ------------------------- */
+
+    .article {
+      padding: 25px;
+      min-width: 0;
+    }
+
+    .trip-date {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-dark);
+    }
+
+    .trip-location {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--pink);
+      margin-top: 2px;
+    }
+
+    .article h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1.15;
+      margin: 5px 0 20px;
+      overflow-wrap: break-word;
+    }
+
+    .article p {
+      max-width: 720px;
+      margin: 0 0 18px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+
+    /* -------------------------
+       OPTIONAL IMAGES
+       ------------------------- */
+
+    .trip-image {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      background: var(--gray);
+      border: 1px solid var(--black);
+      margin: 25px 0 5px;
+    }
+
+    .caption {
+      font-size: 9px;
+      color: var(--gray-dark);
+      margin-bottom: 20px;
+    }
+
+
+    /* -------------------------
+       OPTIONAL PHOTO ROW
+       ------------------------- */
+
+    .photo-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .photo-row img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--black);
+      background: var(--gray);
+    }
+
+
+    /* -------------------------
+       BACK LINK
+       ------------------------- */
+
+    .back {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    footer {
+      border-top: 1px solid var(--black);
+      margin-top: 30px;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 9px;
+      color: var(--gray-dark);
+    }
+
+    footer strong {
+      color: var(--black);
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .page {
+        width: calc(100% - 20px);
+        max-width: none;
+        margin: 10px auto 30px;
+      }
+
+      .top-right {
+        display: none;
+      }
+
+      .profile-header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+        max-width: 120px;
+      }
+
+      .profile-info h1 {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+        line-height: 1.05;
+      }
+
+      .profile-subtitle {
+        margin-bottom: 12px;
+      }
+
+      nav {
+        gap: 10px 15px;
+        padding: 8px 10px;
+      }
+
+      nav a {
+        font-size: 9px;
+      }
+
+      .article {
+        padding: 18px;
+      }
+
+      .article h2 {
+        font-size: 29px;
+      }
+
+      .article p {
+        font-size: 13px;
+      }
+
+      .photo-row {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+
+    /* -------------------------
+       VERY SMALL PHONES
+       ------------------------- */
+
+    @media (max-width: 400px) {
+
+      .page {
+        width: calc(100% - 14px);
+      }
+
+      .profile-header {
+        padding: 12px;
+      }
+
+      .profile-photo {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+      }
+
+      .profile-info h1 {
+        font-size: 32px;
+      }
+
+      .article {
+        padding: 15px;
+      }
+
+      .article h2 {
+        font-size: 26px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- =================================================
+       TOP
+       ================================================= -->
+
+  <div class="top">
+
+
+<div>
+  never growing up
+</div>
+
+<div class="top-right">
+  welcome to my page
+</div>
+
+
+  </div>
+
+  <!-- =================================================
+       PROFILE HEADER
+       ================================================= -->
+
+  <header class="profile-header">
+
+
+<img
+  src="../images/IMG_5390.JPG"
+  alt="Profile photo"
+  class="profile-photo"
+>
+
+<div class="profile-info">
+
+  <h1>
+    Never <span>Growing Up.</span>
+  </h1>
+
+  <div class="profile-subtitle">
+    adventures · machines · life
+  </div>
+
+  <div class="status">
+    ● currently figuring it out
+  </div>
+
+</div>
+
+
+  </header>
+
+  <!-- =================================================
+       NAVIGATION
+       ================================================= -->
+
+  <nav>
+
+
+<a href="../index.html">
+  home
+</a>
+
+<a href="../blog.html">
+  blog
+</a>
+
+<a href="../adventures.html">
+  adventures
+</a>
+
+<a href="../about.html">
+  about
+</a>
+
+
+  </nav>
+
+  <!-- =================================================
+       TRIP REPORT
+       ================================================= -->
+
+  <main>
+
+
+<div class="box">
+
+  <div class="box-title">
+    trip report
+  </div>
+
+  <article class="article">
+
+
+    <!-- DATE -->
+
+    <div class="trip-date">
+      september 2024
+    </div>
+
+
+    <!-- LOCATION -->
+
+    <div class="trip-location">
+      iceland
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h2>
+      Land of Fire and Ice
+    </h2>
+
+
+    <!-- =================================================
+         OPTIONAL HERO IMAGE
+
+         Uncomment if you want a large image here.
+         ================================================= -->
+
+    <!--
+
+    <img
+      src="../images/iceland-01.jpeg"
+      alt="Iceland landscape"
+      class="trip-image"
+    >
+
+    <div class="caption">
+      somewhere in iceland · 2024
+    </div>
+
+    -->
+
+
+    <!-- =================================================
+         INTRO
+         ================================================= -->
+
+    <p>
+      Iceland had been sitting on the list for a while.
+      Eventually the only reasonable thing to do was
+      stop talking about going and actually go.
+    </p>
+
+    <p>
+      A rental car, a pile of camera gear, too many
+      snacks, and a rough idea of where we were going
+      was about all we had when we landed.
+    </p>
+
+
+    <!-- =================================================
+         OPTIONAL IMAGE 02
+         ================================================= -->
+
+    <!--
+
+    <img
+      src="../images/iceland-02.jpeg"
+      alt="Road through Iceland"
+      class="trip-image"
+    >
+
+    <div class="caption">
+      the road ahead · 2024
+    </div>
+
+    -->
+
+
+    <!-- =================================================
+         DAY / SECTION
+         ================================================= -->
+
+    <p>
+      The first few days were mostly about driving.
+      The landscape changed constantly, and every time
+      we thought we had seen the best part, the road
+      would turn a corner and prove us wrong.
+    </p>
+
+    <p>
+      We didn't really have a strict schedule. If
+      something looked interesting, we stopped.
+      If a road looked like it went somewhere,
+      we took it.
+    </p>
+
+
+    <!-- =================================================
+         OPTIONAL TWO PHOTO ROW
+
+         Uncomment this entire section if you want
+         two pictures side by side.
+         ================================================= -->
+
+    <!--
+
+    <div class="photo-row">
+
+      <img
+        src="../images/iceland-03.jpeg"
+        alt="Iceland landscape"
+      >
+
+      <img
+        src="../images/iceland-04.jpeg"
+        alt="Iceland road"
+      >
+
+    </div>
+
+    -->
+
+
+    <p>
+      Somewhere along the way the trip stopped feeling
+      like a vacation and started feeling like an
+      adventure.
+    </p>
+
+    <p>
+      Maybe it was the weather. Maybe it was the empty
+      roads. Maybe it was realizing that we had no idea
+      what was waiting around the next corner.
+    </p>
+
+
+    <!-- =================================================
+         OPTIONAL IMAGE 03
+         ================================================= -->
+
+    <!--
+
+    <img
+      src="../images/iceland-05.jpeg"
+      alt="Iceland sunset"
+      class="trip-image"
+    >
+
+    <div class="caption">
+      one of the better sunsets · 2024
+    </div>
+
+    -->
+
+
+    <p>
+      By the end, we had driven a lot of miles, taken
+      far too many pictures, eaten more gas-station food
+      than we probably should have, and started planning
+      the next trip before this one was even over.
+    </p>
+
+    <p>
+      That's probably a good sign.
+    </p>
+
+
+    <!-- =================================================
+         BACK TO ADVENTURES
+         ================================================= -->
+
+    <a href="../adventures.html" class="back">
+      ← back to adventures
+    </a>
+
+  </article>
+
+</div>
+
+
+  </main>
+
+  <!-- =================================================
+       FOOTER
+       ================================================= -->
+
+  <footer>
+
+
+<div>
+  <strong>Never Growing Up</strong>
+  · © 2026
+</div>
+
+<div>
+  made by a human ·
+  :D
+</div>
+
+
+  </footer>
+
+</div>
+
+</body>
+
+</html>
